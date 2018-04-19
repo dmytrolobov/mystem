@@ -1,0 +1,86 @@
+.stem-wrap {
+	max-width: 1100px;
+	margin-right: 20px;
+}
+.stem-about {
+	margin: 1em 200px 1em 0;
+	min-height: 60px;
+	color: #555d66;
+	font-weight: 400;
+	line-height: 1.6em;
+	font-size: 19px;
+}
+.stem-about p {
+	font-size: 19px;
+	color: #404040;	
+}
+.stem-content {
+	margin:25px 0;	
+}
+.stem-thanks {	
+	margin-top: 55px;
+	padding: 20px 0;
+	line-height: 1.5;
+  font-size: 16px;
+	font-style: italic;
+	width: 100%;
+}
+
+.stem-wrap input[type=text], .stem-wrap input[type=number], .stem-wrap select , .stem-wrap textarea, .stem-wrap input[type=email], .stem-wrap input[type=url]{	
+	border: 1px solid #cecece;
+	padding: 10px;
+	width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+}	
+.stem-wrap textarea{height:150px;}	
+.stem-wrap select {height:40px;}
+
+
+.stem-wrap .box{
+		width: 100%;
+    background: #fff;
+    padding: 10px;    
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.stem-wrap .myrow{
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+}
+
+.stem-wrap .mycol{
+	width:100%;
+	padding: 10px;
+}
+
+
+.my-alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.my-alert-update {
+    color: #94a540;
+    background-color: #e7f7e3;
+    border-color: #c7e5dc;
+}
+
+.my-alert {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid transparent;
+    vertical-align: middle;
+}
+p.my_error {
+	margin: 0 !important;
+}
+
+
