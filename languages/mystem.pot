@@ -1,0 +1,412 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: MyStem\n"
+"POT-Creation-Date: 2018-05-07 21:02+0300\n"
+"PO-Revision-Date: 2018-05-07 21:02+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Try using the search form "
+"below."
+msgstr ""
+
+#: admin/index.php:43
+msgid ""
+"MyStem is now installed and ready to use! Get ready to build something "
+"unique & beautiful."
+msgstr ""
+
+#. translators: %s is url to Customizer
+#: admin/index.php:47
+msgid "Go to Customizer"
+msgstr ""
+
+#: admin/index.php:47
+msgid "to make Your Website Legendary."
+msgstr ""
+
+#: admin/index.php:49
+msgid "We hope you enjoy it!"
+msgstr ""
+
+#: admin/index.php:55
+msgid "Plugins"
+msgstr ""
+
+#. translators: %s is number of comments
+#: comments.php:32
+#, php-format
+msgctxt "comments title"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39 comments.php:66
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:42 comments.php:69
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:47 comments.php:74
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:86
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:96
+msgid "Leave a Reply"
+msgstr ""
+
+#. translators: %s title of post
+#: comments.php:98
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:99
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:100
+msgid "Post Comment"
+msgstr ""
+
+#. translators: %s login url
+#: comments.php:103
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#. translators: %1$s is profile url, %2$s is author name, %3$s  is logout url
+#: comments.php:105
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: content/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: %s is url to new post
+#: content/content-none.php:22
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content/content-none.php:26
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: content/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content/content-page.php:21 content/content-single.php:37
+#: content/content.php:43
+msgid "Pages:"
+msgstr ""
+
+#: content/content-single.php:54
+msgid "Related posts"
+msgstr ""
+
+#: content/content-single.php:66
+msgid "About "
+msgstr ""
+
+#: functions.php:55
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:56
+msgid "Header Menu (no drop-downs)"
+msgstr ""
+
+#: functions.php:71
+msgid "About MyStem"
+msgstr ""
+
+#: functions.php:88
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:97
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:106
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:115
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:189 inc/customizer.php:261
+msgid "Read More"
+msgstr ""
+
+#: header.php:50
+msgid "Menu"
+msgstr ""
+
+#: header.php:51
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:15
+msgid "Site Title (Logo) & Tagline"
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "Layout & Design"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Control the column configuration and color scheme of your site."
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "Choose a layout:"
+msgstr ""
+
+#: inc/customizer.php:55
+msgid "Header Background"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Header Text Color"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "Footer Background"
+msgstr ""
+
+#: inc/customizer.php:90
+msgid "Footer Text Color"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Footer Widgets Background"
+msgstr ""
+
+#: inc/customizer.php:113
+msgid "Footer Widgets Title Color"
+msgstr ""
+
+#: inc/customizer.php:124
+msgid "Footer Widgets Link Color"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer.php:147
+msgid "Border Color"
+msgstr ""
+
+#: inc/customizer.php:158
+msgid "Background Color"
+msgstr ""
+
+#: inc/customizer.php:169
+msgid "Blocks Background Color"
+msgstr ""
+
+#: inc/customizer.php:180
+msgid "Text Color"
+msgstr ""
+
+#: inc/customizer.php:190
+msgid "Border Radius (px):"
+msgstr ""
+
+#: inc/customizer.php:199
+msgid "Hide Header menu?"
+msgstr ""
+
+#: inc/customizer.php:209
+msgid "Hide Primary menu?"
+msgstr ""
+
+#: inc/customizer.php:219
+msgid "Hide Search in menu?"
+msgstr ""
+
+#: inc/customizer.php:229
+msgid "Hide Footer widget block?"
+msgstr ""
+
+#: inc/customizer.php:238
+msgid "Content Options"
+msgstr ""
+
+#: inc/customizer.php:239
+msgid ""
+"Adjust the display of content on your website. All options have a default "
+"value that can be left as-is but you are free to customize."
+msgstr ""
+
+#: inc/customizer.php:249
+msgid "Post Feed Content"
+msgstr ""
+
+#: inc/customizer.php:266
+msgid "Excerpt & More Link Text"
+msgstr ""
+
+#: inc/customizer.php:277
+msgid "Show Featured Images in post listings?"
+msgstr ""
+
+#: inc/customizer.php:288
+msgid "Show Featured Images on Single Posts?"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "Show Meta on Single Posts?"
+msgstr ""
+
+#: inc/customizer.php:310
+msgid "Show Tags on Single Posts?"
+msgstr ""
+
+#: inc/customizer.php:321
+msgid "Show Related posts on Single Posts?"
+msgstr ""
+
+#: inc/customizer.php:333
+msgid "Number Of Related Posts:"
+msgstr ""
+
+#: inc/customizer.php:343
+msgid "Show Author block on Single Posts?"
+msgstr ""
+
+#: inc/customizer.php:354
+msgid "Show Navigation block on Single Posts?"
+msgstr ""
+
+#: inc/customizer.php:365
+msgid "Display Comments on Standard Pages?"
+msgstr ""
+
+#: inc/customizer.php:378
+msgid "Footer Credits & Copyright"
+msgstr ""
+
+#: inc/extras.php:14
+msgid "Home"
+msgstr ""
+
+#: inc/template-tags.php:28
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:80
+msgid "Comments"
+msgstr ""
+
+#: inc/template-tags.php:80
+msgid "1 comment"
+msgstr ""
+
+#: inc/template-tags.php:80
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: inc/template-tags.php:117
+msgid "Y"
+msgstr ""
+
+#. translators: %s is search term
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:12 searchform.php:16
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:20
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:19
+msgid "Archives"
+msgstr ""
+
+#: sidebar.php:28
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "MyStem"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Convenient, clean and simple to use WordPress theme MyStem will help attract "
+"and retain more visitors to your site. It is great for creating blogs, "
+"websites, portfolios, news and information portals, magazine publications, "
+"etc. The responsive multifunctional theme is optimized for SEO with great "
+"attention to detail. It supports widgets with a variety of sidebar options "
+"and 3 footers. It allows you to add the audio and video content, display "
+"individual images and whole galleries, navigational menus, recent posts, RSS "
+"feeds and more through the widgets. You can easily customize the flexible "
+"menu, logo and resource icon, edit the color scheme of the site, the content "
+"display options on the main page, add your own CSS code. The theme is fully "
+"adaptable, it provides convenient viewing on various devices. Supports "
+"multilanguage."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Dmytro Lobov"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://profiles.wordpress.org/lobov"
+msgstr ""

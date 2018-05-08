@@ -16,42 +16,9 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php
-					if ( is_category() ) :
-						single_cat_title();
-
-						elseif ( is_tag() ) :
-							single_tag_title();
-
-						elseif ( is_author() ) :
-							/* translators: %s is author */
-							printf( __( 'Author: %s', 'mystem' ), '<span class="vcard">' . get_the_author() . '</span>' );
-
-						elseif ( is_day() ) :
-							/* translators: %s is date */
-							printf( __( 'Day: %s', 'mystem' ), '<span>' . get_the_date() . '</span>' );
-
-						elseif ( is_month() ) :
-							/* translators: %s is monthly archives date format*/
-							printf( __( 'Month: %s', 'mystem' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mystem' ) ) . '</span>' );
-
-						elseif ( is_year() ) :
-							/* translators: %s is yearly archives date format*/
-							printf( __( 'Year: %s', 'mystem' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mystem' ) ) . '</span>' );
-
-						else :
-							__( 'Archives', 'mystem' );
-
-						endif;
-					?>
+					<?php the_archive_title(); ?>
 				</h1>
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-				if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
+				<?php the_archive_description(); ?>
 			</header>
 
 			<?php /* Start the Loop */ ?>
@@ -67,7 +34,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php stem_paging_nav(); ?>
+			<?php the_posts_pagination(); ?>	
 
 		<?php else : ?>
 

@@ -9,43 +9,13 @@
 		* @since MyStem 1.0
 	*/
 
-if ( ! function_exists( 'stem_paging_nav' ) ) :
-	/**
-		* Display navigation to next/previous set of posts when applicable.
-		*
-		* @return void
-	*/
-	function stem_paging_nav() {
-		// Don't print empty markup if there's only one page.
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-			return;
-		}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php esc_attr_e( 'Posts navigation', 'mystem' ); ?></h1>
-		<div class="nav-links">
-			
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<i class="far fa-arrow-alt-circle-left"></i> Older posts', 'mystem' ) ); ?></div>
-			<?php endif; ?>
-			
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <i class="far fa-arrow-alt-circle-right"></i>', 'mystem' ) ); ?></div>
-			<?php endif; ?>
-			
-		</div>
-	</nav>
-	<?php
-	}
-endif;
-
-if ( ! function_exists( 'stem_post_nav' ) ) :
+if ( ! function_exists( 'mystem_post_nav' ) ) :
 	/**
 		* Display navigation to next/previous post when applicable.
 		*
 		* @return void
 	*/
-	function stem_post_nav() {
+	function mystem_post_nav() {
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		$next     = get_adjacent_post( false, '', false );
@@ -55,11 +25,11 @@ if ( ! function_exists( 'stem_post_nav' ) ) :
 		}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php esc_attr_e( 'Post navigation', 'mystem' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'mystem' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<i class="far fa-arrow-alt-circle-left"></i> %title', 'Previous post link', 'mystem' ) );
-				next_post_link( '<div class="nav-next">%link</div>', _x( '%title <i class="far fa-arrow-alt-circle-right"></i>', 'Next post link', 'mystem' ) );
+				previous_post_link( '<div class="nav-previous"><i class="far fa-arrow-alt-circle-left"></i> %link</div>', '%title' );
+				next_post_link( '<div class="nav-next">%link <i class="far fa-arrow-alt-circle-right"></i></div>', '%title' );
 			?>
 		</div>
 	</nav>
@@ -67,11 +37,11 @@ if ( ! function_exists( 'stem_post_nav' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'stem_posted_on' ) ) :
+if ( ! function_exists( 'mystem_posted_on' ) ) :
 	/**
 		* Prints HTML with meta information for the current post-date/time and author.
 	*/
-	function stem_posted_on() {
+	function mystem_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -84,7 +54,11 @@ if ( ! function_exists( 'stem_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 	?>
-	<span class="byline">
+	<span class="byline mystem-cat">
+		<i class="far fa-folder"></i>
+		<?php the_category(' '); ?>
+	</span>
+	<span class="posted-on mystem-author">
 		<i class="far fa-user"></i>
 		<?php
 			printf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
@@ -93,7 +67,7 @@ if ( ! function_exists( 'stem_posted_on' ) ) :
 			);
 		?>
 	</span>
-	<span class="posted-on">
+	<span class="posted-on mystem-clock">
 		<i class="far fa-clock"></i>
 		<?php
 			printf( '<a href="%1$s" rel="bookmark">%2$s</a>',
@@ -108,8 +82,8 @@ if ( ! function_exists( 'stem_posted_on' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'stem_related_posts' ) ) :
-	function stem_related_posts() {
+if ( ! function_exists( 'mystem_related_posts' ) ) :
+	function mystem_related_posts() {
 		$tags = wp_get_post_tags( get_the_ID() );
 		if ( $tags ) {
 			$tag_ids = array();
@@ -119,7 +93,7 @@ if ( ! function_exists( 'stem_related_posts' ) ) :
 			$args = array(
 				'tag__in' => $tag_ids,
 				'post__not_in' => array( absint( get_the_ID() ) ),
-				'showposts' => get_theme_mod( 'stem_post_related_posts_number', '5' ),
+				'showposts' => get_theme_mod( 'mystem_post_related_posts_number', '5' ),
 			);
 			$my_query = new wp_query( $args );
 			if ( $my_query->have_posts() ) {
@@ -132,8 +106,22 @@ if ( ! function_exists( 'stem_related_posts' ) ) :
 				}
 				echo '</ul>';
 			}
-			wp_reset_query();
+			wp_reset_postdata();
 		}
 	}
 
+endif;
+
+if ( ! function_exists( 'mystem_credits_copyright' ) ) :
+	function mystem_credits_copyright() {
+		$site_info = get_bloginfo( 'description' ) . ' - ' . get_bloginfo( 'name' ) . ' &copy; ' . date_i18n( __('Y','mystem') );
+		$credits_copyright = get_theme_mod( 'mystem_credits_copyright' );
+		if ( ! empty( $credits_copyright ) ){
+			echo wp_kses_post( $credits_copyright );
+		}
+		else {
+			echo esc_attr( $site_info );
+		}
+	
+	}
 endif;

@@ -3,7 +3,7 @@
 	Author: Dmytro Lobov
 	Author URI: https://profiles.wordpress.org/lobov
 	Description: Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage.	
-	Version:     1.0	
+	Version:     1.0.5
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Text Domain: mystem
@@ -358,8 +358,7 @@ input[type="button"] {
 	line-height: 71px;
 	transition: all .15s ease-in-out;
 }
-.header-menu a {
-	color: #fff;
+.header-menu a {	
 	font-size: 1em;
 }
 
@@ -442,9 +441,7 @@ input[type="button"] {
 	margin: 0 10px 0 -4px;
   font-size: 16px;
   line-height: inherit;
-  text-align: center;
-	color: #ffffff;
-	
+  text-align: center;	
 }
 
 /* Small menu */
@@ -493,6 +490,21 @@ input[type="button"] {
 	text-align: right;
 	width: 48%;
 }
+/* Posts Navigation */
+.navigation.pagination {
+	padding:10px;	
+	text-align: center;
+}
+.page-numbers {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 2px 0 0;
+	border: 1px solid;
+	line-height: 1;
+	text-decoration: none;	
+	font-weight: 600;
+}
+
 /* Theme Search Widget */
 .search-form {
 	position: relative;
@@ -526,10 +538,10 @@ input[type="button"] {
 	cursor: pointer;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
+	background: none;
 }
 .search-form .search-submit .font-awesome-search {	
-	display: inline-block;	
-	color: #fff;	
+	display: inline-block;			
 	vertical-align: middle;
 	text-decoration: inherit;
 	font-weight: normal;
@@ -642,12 +654,9 @@ input[type="button"] {
 	font: normal 40px/60px 'Pacifico', 'cursive';
 }
 .site-title a {
-	color: #ffffff;
 	text-decoration: none;
 }
-.site-title a:hover {
-	color: #ffffff;
-}
+
 
 /*--------------------------------------------------------------
 	Content
@@ -1018,7 +1027,7 @@ h4.widget-title{
 	list-style: none;
 	padding-bottom: 10px;
 }
-.widget li:before {	
+.widget li:before, .footer-widget li:before{	
 	font-family: "Font Awesome 5 Free";
 	content: "\f054";
 	margin-right: 8px;
@@ -1085,10 +1094,10 @@ h4.widget-title{
 	cursor: pointer;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;	
+	background: none;
 }
 .widget_search .search-submit .font-awesome-search, .page_search .search-submit .font-awesome-search {	
-	display: inline-block;	
-	color: #fff;	
+	display: inline-block;			
 	vertical-align: middle;
 	text-decoration: inherit;
 	font-weight: 400;
@@ -1103,7 +1112,6 @@ h4.widget-title{
 	Footer
 --------------------------------------------------------------*/
 .site-footer {
-	color: #fff;
 	font-size: 13px;
 }
 .landing-template .site-footer {
@@ -1117,16 +1125,11 @@ h4.widget-title{
 	padding: 0 15px;
 	
 }
-
-.footer-widget {
-}
 .footer-widget {	
-	color: #fff;
 	background: none;
 	margin-bottom: 30px;	
 }
 .footer-widget-title {
-	color: #fff;
 	margin-bottom: 10px;
 }
 h4.footer-widget-title{
@@ -1145,10 +1148,12 @@ h4.footer-widget-title{
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
-.footer-widget a {
-	color: #ababab;
+.footer-widget a {	
 	font-size: 15px;
 	line-height: 32px;
+}
+.footer-widget a:hover{
+	opacity: 0.75;
 }
 .footer-widget select {
 	max-width: 100%;
@@ -1170,6 +1175,14 @@ h4.footer-widget-title{
 }
 .footer-widget_search .search-submit {
 	display: none;
+}
+
+.site-info {
+	width:100%;	
+	font-size: 13px;
+}
+.site-info .main{
+	padding:20px 10px;
 }
 
 /*--------------------------------------------------------------

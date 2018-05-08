@@ -6,15 +6,16 @@
 		* @subpackage MyStem
 		* @since MyStem 1.0
 	*/
-	$title = get_bloginfo( 'name' );
-	$tagline = get_bloginfo( 'description ' );
+	$title = get_bloginfo( 'name' );	
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<meta charset="<?php echo get_bloginfo( 'charset' ); ?>">
+		<meta charset="<?php echo esc_attr( get_bloginfo( 'charset' ) ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="<?php echo get_bloginfo( 'pingback_url' ); ?>">
+		<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+		<?php endif; ?>		
 		<?php wp_head(); ?>
 	</head>
 	
@@ -29,46 +30,35 @@
 						} 
 						else { ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $title ); ?>">
-							<?php echo esc_attr( $title ); ?>
+							<?php echo esc_html( $title ); ?>
 						</a>
 						<?php } ?>
 					</span>
-					<?php if ( ! get_theme_mod( 'stem_header_menu' ) ) : ?>
+					<?php if ( ! get_theme_mod( 'mystem_header_menu' ) ) : ?>
 					<nav id="header-navigation" class="header-menu" role="navigation">
 						<?php wp_nav_menu( array(
 							'theme_location' => 'header',
-							'fallback_cb' => 'stem_menu_fallback',
+							'fallback_cb' => 'mystem_menu_fallback',
 						) ); ?>
-						</nav>
+					</nav>
 					<?php endif; ?>
 				</div>
 			</header>
-			<?php if ( ! get_theme_mod( 'stem_primary_menu' ) ) : ?>
+			<?php if ( ! get_theme_mod( 'mystem_primary_menu' ) ) : ?>
 			<div class="main-menu-container">
 				<nav id="site-navigation" class="main main-navigation clear" role="navigation">
-					<span class="menu-toggle"><?php echo '<i class="fas fa-bars"></i> ' . esc_attr_e( 'Menu', 'mystem' ); ?></span>
-					<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', 'mystem' );?></a>
+					<span class="menu-toggle"><?php echo '<i class="fas fa-bars"></i> ' . esc_html_e( 'Menu', 'mystem' ); ?></span>
+					<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mystem' );?></a>
 					
 					<?php wp_nav_menu( array(
 						'theme_location' => 'primary',
-						'fallback_cb' => 'stem_menu_fallback',
+						'fallback_cb' => 'mystem_menu_fallback',
 					) ); ?>
-					
+					<?php if ( ! get_theme_mod( 'mystem_search' ) ) : ?>
 					<div class="search-form">
-						<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<label>
-								<span class="screen-reader-text"><?php echo esc_html_x( 'Search for:', 'label', 'mystem' ); ?></span>
-								<input type="search" class="search-field"
-								placeholder="<?php echo esc_attr_x( 'Search...', 'placeholder', 'mystem' ); ?>"
-								value="<?php echo esc_html( get_search_query() ); ?>" name="s"
-								title="<?php echo esc_attr_x( 'Search for:', 'label', 'mystem' ); ?>" />
-							</label>
-							<button type="submit" class="search-submit">
-								<span class="font-awesome-search"></span>
-								<span class="screen-reader-text"><?php echo esc_html_x( 'Search', 'submit button', 'mystem' ); ?></span>
-							</button>
-						</form>
+						<?php get_search_form(); ?>
 					</div>	
+					<?php endif; ?>
 				</nav>
 			</div>
 			<?php endif; ?>
@@ -77,3 +67,4 @@
 		<div class="main-content-area full">
 			<div class="main">
 				<div id="content" class="site-content inner">
+								

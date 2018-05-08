@@ -29,7 +29,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php stem_paging_nav(); ?>
+			<?php mystem_paging_nav(); ?>
 
 		<?php else : ?>
 

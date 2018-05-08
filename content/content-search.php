@@ -13,7 +13,7 @@
 		
 		<h4 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>		
 		<div class="entry-meta">
-			<?php stem_posted_on(); ?>
+			<?php mystem_posted_on(); ?>
 		</div>
 	</header>
 	<div class="entry-summary">

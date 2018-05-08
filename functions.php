@@ -7,7 +7,7 @@
 		* @since MyStem 1.0
 	*/	
 	
-	if ( ! function_exists( 'stem_setup' ) ) :
+	if ( ! function_exists( 'mystem_setup' ) ) :
 	/**
 		* Sets up theme defaults and registers support for various WordPress features.
 		*
@@ -16,7 +16,7 @@
 		* as indicating support for post thumbnails.
 	*/
 	
-	function stem_setup() {
+	function mystem_setup() {
 		// keep the media in check
 		if ( ! isset( $content_width ) ) {
 			$content_width = 762;
@@ -64,19 +64,18 @@
 		) );
 	}
 	endif; // stem_setup
-	add_action( 'after_setup_theme', 'stem_setup' );
+	add_action( 'after_setup_theme', 'mystem_setup' );
 	
 	
-	function stem_add_menu_page() {
-		add_theme_page( 'About MyStem', 'About MyStem', 'edit_theme_options', 'mystem', 'stem_options_page' );
+	function mystem_add_menu_page() {
+		add_theme_page( __('About MyStem', 'mystem' ), __('About MyStem', 'mystem' ), 'edit_theme_options', 'mystem', 'mystem_options_page' );
 	}
-	add_action( 'admin_menu', 'stem_add_menu_page' );
+	add_action( 'admin_menu', 'mystem_add_menu_page' );
 	
 	
-	if ( ! function_exists( 'stem_options_page' ) ) {
-		function stem_options_page() {
-			load_template( dirname( __FILE__ ) . '/admin/index.php' );
-			wp_enqueue_style( 'stem-admin', get_template_directory_uri() . '/inc/assets/css/admin.css');
+	if ( ! function_exists( 'mystem_options_page' ) ) {
+		function mystem_options_page() {
+			load_template( dirname( __FILE__ ) . '/admin/index.php' );			
 		}
 	}
 	
@@ -84,7 +83,7 @@
 		* Register widgetized area and update sidebar with default widgets.
 	*/
 	
-	function stem_widgets_init() {
+	function mystem_widgets_init() {
 		register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'mystem' ),
 		'id'            => 'sidebar-1',
@@ -122,35 +121,35 @@
 		) );
 		
 	}
-	add_action( 'widgets_init', 'stem_widgets_init' );
+	add_action( 'widgets_init', 'mystem_widgets_init' );
 	
 	
 	/**
 		* Enqueue scripts and styles.
 	*/
 	
-	function stem_scripts() {
+	function mystem_scripts() {
 		// main stylesheet
-		wp_enqueue_style( 'stem-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'mystem-style', get_stylesheet_uri() );
 		
-		wp_add_inline_style( 'stem-style', stem_color_scheme_css() );
+		wp_add_inline_style( 'mystem-style', mystem_color_scheme_css() );
 		
 		// font awesome stylesheet
-		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/inc/assets/fonts/font-awesome/css/fontawesome-all.min.css', null, '5.0.6' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/font-awesome/css/fontawesome-all.min.css', array(), '5.0.11', 'all' );
 		
 		// Google fonts - Pacifico & Quicksand
-		wp_enqueue_style( 'googlefonts', 'http://fonts.googleapis.com/css?family=Pacifico|Quicksand:400italic,700italic,400,700' );
+		wp_enqueue_style( 'mystem-googlefonts', '//fonts.googleapis.com/css?family=Pacifico|Quicksand:400italic,700italic,400,700' );
 		
 		// theme assets
-		wp_enqueue_script( 'stem-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js' );
+		wp_enqueue_script( 'mystem-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array(), null, true );
 		
-		wp_enqueue_script( 'stem-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js' );
+		wp_enqueue_script( 'mystem-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js' );
 		
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
-	add_action( 'wp_enqueue_scripts', 'stem_scripts' );
+	add_action( 'wp_enqueue_scripts', 'mystem_scripts' );
 	
 	/**
 		* Custom template tags for this theme.
@@ -171,33 +170,34 @@
 		* Adjust excerpt length
 	*/
 	
-	if ( ! function_exists( 'stem_custom_excerpt_length' ) ) {
-		function stem_custom_excerpt_length( $length ) {
-			if ( is_admin() ) {
-				return $length;
-			}
-			return 35;
+	if ( ! function_exists( 'mystem_custom_excerpt_length' ) ) {
+		function mystem_custom_excerpt_length( $length ) {
+			if ( !is_admin() ){
+				return 35;
+			}			
 		}
 	}
-	add_filter( 'excerpt_length', 'stem_custom_excerpt_length', 999 );
+	add_filter( 'excerpt_length', 'mystem_custom_excerpt_length', 999 );
 	
 	
 	/** ===============
 		* Replace excerpt ellipses with new ellipses and link to full article
 	*/
-	if ( ! function_exists( 'stem_excerpt_more' ) ) {
-		function stem_excerpt_more( $more ) {
-			return '...</p> <div class="continue-reading"><a class="more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . esc_html( get_theme_mod( 'stem_read_more', __( 'Read More', 'mystem' ) ) ) . ' <i class="fas fa-angle-double-right"></i></a></div>';
+	if ( ! function_exists( 'mystem_excerpt_more' ) ) {
+		function mystem_excerpt_more( $more ) {
+			if ( !is_admin() ) {
+				return '...</p> <div class="continue-reading"><a class="more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . esc_html( get_theme_mod( 'mystem_read_more', __( 'Read More', 'mystem' ) ) ) . ' <i class="fas fa-angle-double-right"></i></a></div>';
+			}
 		}
 	}
-	add_filter( 'excerpt_more', 'stem_excerpt_more' );
+	add_filter( 'excerpt_more', 'mystem_excerpt_more' );
 	
 	
 	/** ===============
 		* Add .top class to the first post in a loop
 	*/
-	if ( ! function_exists( 'stem_first_post_class' ) ) {
-		function stem_first_post_class( $classes ) {
+	if ( ! function_exists( 'mystem_first_post_class' ) ) {
+		function mystem_first_post_class( $classes ) {
 			global $wp_query;
 			if ( 0 == $wp_query->current_post ) {
 				$classes[] = 'top';
@@ -205,7 +205,7 @@
 			return $classes;
 		}
 	}
-	add_filter( 'post_class', 'stem_first_post_class' );
+	add_filter( 'post_class', 'mystem_first_post_class' );
 	
 	
 	/**
@@ -217,29 +217,11 @@
 		*
 		* @return array
 	*/
-	if ( ! function_exists( 'stem_change_tag_cloud_font_sizes' ) ) {
-		function stem_change_tag_cloud_font_sizes( array $args ) {
+	if ( ! function_exists( 'mystem_change_tag_cloud_font_sizes' ) ) {
+		function mystem_change_tag_cloud_font_sizes( array $args ) {
 			$args['smallest'] = '8';
 			$args['largest'] = '8';
 			return $args;
 		}
 	}
-	add_filter( 'widget_tag_cloud_args', 'stem_change_tag_cloud_font_sizes' );
-	
-	if ( ! function_exists( 'stem_tiny_mce_buttons' ) ) {
-		function stem_tiny_mce_buttons( $buttons_array ){
-			if ( !in_array( 'underline', $buttons_array ) && in_array( 'italic', $buttons_array ) ){
-				$key = array_search( 'italic', $buttons_array );
-				$inserted = array( 'underline' );
-				array_splice( $buttons_array, $key + 1, 0, $inserted );
-			}
-			if ( !in_array( 'alignjustify', $buttons_array ) && in_array( 'alignright', $buttons_array ) ){
-				$key = array_search( 'alignright', $buttons_array );
-				$inserted = array( 'alignjustify' );
-				array_splice( $buttons_array, $key + 1, 0, $inserted );
-			}
-			return $buttons_array;
-		}
-	}
-	
-	add_filter( 'mce_buttons', 'stem_tiny_mce_buttons', 5 );
+	add_filter( 'widget_tag_cloud_args', 'mystem_change_tag_cloud_font_sizes' );

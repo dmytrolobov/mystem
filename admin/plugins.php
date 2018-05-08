@@ -18,7 +18,7 @@
 	<div class="theme-browser">
 		<div class="themes">
 			
-			<?php echo stem_add_get_feed(); ?>
+			<?php stem_add_get_feed(); ?>
 			
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 		$image = get_template_directory_uri().'/admin/image/';		
 		$plugins = array(
 		0 => array('Float menu - awesome floating side menu', 'Easily create floating menus of varying complexity. Use its capabilities to place unique navigation on the site.', 'float-menu', 'float-menu-pro'),
-		1 => array('Modal Window - create popup modal window ', 'Modal Window - Wordpress plugin for creating popup modal window with any kind of content and settings. Simple popup modal window builder plugin.', 'modal-window', 'wow-modal-windows-pro'),		
+		1 => array('Modal Window - create popup modal window ', 'Modal Window - WordPress plugin for creating popup modal window with any kind of content and settings. Simple popup modal window builder plugin.', 'modal-window', 'wow-modal-windows-pro'),		
 		
 		2 => array('Herd Effects - fake notifications to motivate users to take action ', 'Create and show fictitious notifications to motivate users to take action on your site! Create a queue effect!', 'mwp-herd-effect', 'wow-herd-effects-pro'),
 		3 => array('Wow Forms - create any form with custom style ', 'Create a any forms: email optin form, contact form, sign up form, inquiry form, feedback form, order form, phone call request form!', 'mwp-forms', 'wow-forms-pro'),
@@ -57,12 +57,12 @@
 		
 		<div class="theme">
 			<div class="height_screen">
-				<a target="_blank" href="<?php echo $wordpress.$value[2]; ?>" target="_blank"><img src="<?php echo $image.$value[2].'.jpg' ?>" />
-					<span><?php echo $value[1]; ?></span>
+				<a target="_blank" href="<?php echo esc_url( $wordpress.$value[2] ); ?>" target="_blank"><img src="<?php echo esc_url( $image.$value[2] ) . '.jpg' ?>" />
+					<span><?php echo esc_attr( $value[1] ); ?></span>
 				</a>
 			</div>
 			<div class="theme-author"></div>
-			<h2 class="theme-name"><span><?php echo $value[0]; ?></span></h2>	
+			<h2 class="theme-name"><span><?php echo esc_attr( $value[0] ); ?></span></h2>	
 		</div>
 		<?php } 
 	}

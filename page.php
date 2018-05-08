@@ -23,7 +23,7 @@ get_header(); ?>
 
 				<?php
 				// only allow comments if chosen in theme customizer
-				if ( get_theme_mod( 'stem_page_comments' ) == 1 ) :
+				if ( get_theme_mod( 'mystem_page_comments' ) == 1 ) :
 					// if comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || '0' != get_comments_number() ) :
 						comments_template();

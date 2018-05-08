@@ -9,7 +9,7 @@ Tags: blog, two-columns, left-sidebar, right-sidebar, custom-background, custom-
 
 == Description ==
 
-Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage.
+Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage. For demo, visit: https://wow-company.com/mystem-demo/
 
 == Installation ==
 
@@ -20,7 +20,8 @@ Convenient, clean and simple to use WordPress theme MyStem will help attract and
 
 == Copyright ==
 
-MyTheme is distributed under the terms of the GNU GPL
+MyStem WordPress Theme, Copyright 2018 Wow-Company
+MyStem is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,8 +40,9 @@ License: License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL
 Source: https://fontawesome.com/
 
 Images
-License: The image on Screenshot is from Unsplash with "do whatever you want" license. 
-Copyright: http://unsplash.com/
+Image on Screenshot, Copyright Lukas
+License: Creative Commons Zero (CC0) https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://www.pexels.com/photo/macbook-pro-beside-papers-669619/
 
 == Changelog ==
 

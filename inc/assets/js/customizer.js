@@ -17,12 +17,12 @@
 		} );
 	} );
 
-	wp.customize( 'stem_read_more', function( value ) {
+	wp.customize( 'mystem_read_more', function( value ) {
 		value.bind( function( to ) {
 			$( '.more-link' ).text( to );
 		} );
 	} );
-	wp.customize( 'stem_credits_copyright', function( value ) {
+	wp.customize( 'mystem_credits_copyright', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-info' ).text( to );
 		} );
