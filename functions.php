@@ -135,7 +135,7 @@
 		wp_add_inline_style( 'mystem-style', mystem_color_scheme_css() );
 		
 		// font awesome stylesheet
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/font-awesome/css/fontawesome-all.min.css', array(), '5.0.11', 'all' );
+		wp_enqueue_style( 'mystem-font-awesome', get_template_directory_uri() . '/font-awesome/css/fontawesome-all.min.css', array(), '5.0.11', 'all' );
 		
 		// Google fonts - Pacifico & Quicksand
 		wp_enqueue_style( 'mystem-googlefonts', '//fonts.googleapis.com/css?family=Pacifico|Quicksand:400italic,700italic,400,700' );
