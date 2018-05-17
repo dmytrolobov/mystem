@@ -2,7 +2,7 @@
 Contributors: lobov
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0-trunk
-Version: 1.0
+Version: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, 
@@ -46,7 +46,13 @@ Source: https://www.pexels.com/photo/macbook-pro-beside-papers-669619/
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.7 =
+* Fixed: Page navigation
+
+= 1.0.6 =
+* Fixed: Style for page with Visual Composer
+
+= 1.0.5 =
 * Released: April 19, 2018
 
 Initial release

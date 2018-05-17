@@ -14,42 +14,33 @@
 	.height_screen a{color:#000; text-decoration:none;}
 	.themes {overflow:hidden;}
 </style>
+<h3>The MyStem is good for using with the next plugins</h3>
 <div class="wrap">
 	<div class="theme-browser">
-		<div class="themes">
-			
-			<?php stem_add_get_feed(); ?>
-			
+		<div class="themes">			
+			<?php mystem_add_get_feed(); ?>			
 		</div>
 	</div>
 </div>
 
 
 <?php
-	function stem_add_get_feed() {
-		$wordpress = 'https://wordpress.org/plugins/';	
+	function mystem_add_get_feed() {			
 		$image = get_template_directory_uri().'/admin/image/';		
 		$plugins = array(
-		0 => array('Float menu - awesome floating side menu', 'Easily create floating menus of varying complexity. Use its capabilities to place unique navigation on the site.', 'float-menu', 'float-menu-pro'),
-		1 => array('Modal Window - create popup modal window ', 'Modal Window - WordPress plugin for creating popup modal window with any kind of content and settings. Simple popup modal window builder plugin.', 'modal-window', 'wow-modal-windows-pro'),		
+		0 => array('WPBakery Page Builder for WordPress (formerly Visual Composer)', 'WPBakery WordPress Page Builder Plugin with Frontend and Backend Editor.', 'visual-composer', 'https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=wow-company'),
 		
-		2 => array('Herd Effects - fake notifications to motivate users to take action ', 'Create and show fictitious notifications to motivate users to take action on your site! Create a queue effect!', 'mwp-herd-effect', 'wow-herd-effects-pro'),
-		3 => array('Wow Forms - create any form with custom style ', 'Create a any forms: email optin form, contact form, sign up form, inquiry form, feedback form, order form, phone call request form!', 'mwp-forms', 'wow-forms-pro'),
+		1 => array('Float menu - awesome floating side menu', 'Easily create floating menus of varying complexity. Use its capabilities to place unique navigation on the site.', 'float-menu', 'https://wow-estore.com/item/float-menu-pro/'),
 		
-		4 => array('Wow Login - WordPress login plugin via email or social network ', 'WordPress login plugin using email login or social login. Your users can sign in using only email or via social network', 'wow-login', 'wow-login-pro'),
+		2 => array('Modal Window - create popup modal window ', 'Modal Window - WordPress plugin for creating popup modal window with any kind of content and settings. Simple popup modal window builder plugin.', 'modal-window', 'https://wow-estore.com/item/wow-modal-windows-pro/'),		
 		
-		5 => array('Wow Facebook Login', 'Highly customizable Facebook login button. Let visitors easily authorize on your wordpress website with their facebook account', 'wow-facebook-login', 'wow-facebook-login-pro'),		
-		6 => array('Wow Google Login', 'Highly customizable Facebook login button. Let visitors easily authorize on your wordpress website with their google account', 'wow-google-login', 'wow-google-login-pro'),	
+		3 => array('Herd Effects - fake notifications to motivate users to take action ', 'Create and show fictitious notifications to motivate users to take action on your site! Create a queue effect!', 'mwp-herd-effect', 'https://wow-estore.com/item/wow-herd-effects-pro/'),			
 		
+		4 => array('Wow Countdowns - create any counter, timer and coundown', 'Create timers & countdowns. Increase your sales & conversions with scarcity & urgency effects!', 'mwp-countdown', 'https://wow-estore.com/item/wow-countdowns-pro/'),	
+				
+		5 => array('Side Menu - add fixed side buttons', 'Easily create floating menus of varying complexity. Use its capabilities to place unique navigation on the site.', 'side-menu', 'https://wow-estore.com/item/side-menu-pro/'),
 		
-		7 => array('Wow Icons ', 'Easily insert and customize icon in post, page and menu. More then 2500 icons.', 'wow-icons', 'wow-icons-pro'),	
-		
-		8 => array('Wow Countdowns - create any counter, timer and coundown', 'Create timers & countdowns. Increase your sales & conversions with scarcity & urgency effects!', 'mwp-countdown', 'wow-countdowns-pro'),	
-		
-		
-		9 => array('Side Menu - add fixed side buttons', 'Easily create floating menus of varying complexity. Use its capabilities to place unique navigation on the site.', 'side-menu', 'side-menu-pro'),
-		
-		10 => array('Bubble Menu - awesome custom circle menu', 'Easily create a custom floating circle menu with an icons.', 'bubble-menu', 'bubble-menu-pro'),
+		6 => array('Bubble Menu - awesome custom circle menu', 'Easily create a custom floating circle menu with an icons.', 'bubble-menu', 'https://wow-estore.com/item/bubble-menu-pro/'),
 		
 		
 		);	
@@ -57,7 +48,7 @@
 		
 		<div class="theme">
 			<div class="height_screen">
-				<a target="_blank" href="<?php echo esc_url( $wordpress.$value[2] ); ?>" target="_blank"><img src="<?php echo esc_url( $image.$value[2] ) . '.jpg' ?>" />
+				<a target="_blank" href="<?php echo esc_url( $value[3] ); ?>" target="_blank"><img src="<?php echo esc_url( $image.$value[2] ) . '.jpg' ?>" />
 					<span><?php echo esc_attr( $value[1] ); ?></span>
 				</a>
 			</div>

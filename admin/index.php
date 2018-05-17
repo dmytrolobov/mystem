@@ -48,16 +48,17 @@ $logo = get_template_directory_uri().'/admin/image/wow-company.png.';
 		<br/>
 		<strong><?php esc_attr_e( 'We hope you enjoy it!', 'mystem' ); ?> </strong>
 	</p>
-	<div class="wow-badge">Wow-Company</div>
+	<a href="https://profiles.wordpress.org/wpcalc" target="_blank" class="wow-badge">Wow-Company</a>
 	<?php
 		$current = ( isset( $_GET['tab'] ) ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'plugins';
 		$tabs = array(			
 			'plugins' => __( 'Plugins', 'mystem' ),
+			'faq' => __( 'FAQ', 'mystem' ),
 		);		
 		echo '<h2 class="nav-tab-wrapper">';
 		foreach ( $tabs as $tab => $name ) {
 			$class = ( $tab === $current ) ? ' nav-tab-active' : '';
-			echo '<a class="nav-tab' .esc_attr( $class ) . '" href="?page=stem&tab=' . esc_attr( $tab ) . '">' . esc_attr( $name ) . '</a>';
+			echo '<a class="nav-tab' .esc_attr( $class ) . '" href="?page=mystem&tab=' . esc_attr( $tab ) . '">' . esc_attr( $name ) . '</a>';
 		}
 		echo '</h2>';
 		echo '<div class="stem-content">';
