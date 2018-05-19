@@ -46,6 +46,9 @@ Source: https://www.pexels.com/photo/macbook-pro-beside-papers-669619/
 
 == Changelog ==
 
+= 1.0.8 =
+* Fixed: Search term
+
 = 1.0.7 =
 * Fixed: Page navigation
 
