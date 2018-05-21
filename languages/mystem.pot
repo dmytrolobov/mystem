@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: MyStem\n"
-"POT-Creation-Date: 2018-05-07 21:02+0300\n"
-"PO-Revision-Date: 2018-05-07 21:02+0300\n"
+"POT-Creation-Date: 2018-05-21 13:39+0300\n"
+"PO-Revision-Date: 2018-05-21 13:39+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,6 +52,10 @@ msgstr ""
 
 #: admin/index.php:55
 msgid "Plugins"
+msgstr ""
+
+#: admin/index.php:56
+msgid "FAQ"
 msgstr ""
 
 #. translators: %s is number of comments
@@ -111,6 +115,10 @@ msgid ""
 "this account\">Log out?</a>"
 msgstr ""
 
+#: comments.php:111
+msgid "Save my name and email in this browser for the next time I comment."
+msgstr ""
+
 #: content/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -134,8 +142,8 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content/content-page.php:21 content/content-single.php:37
-#: content/content.php:43
+#: content/content-page-without-title.php:18 content/content-page.php:21
+#: content/content-single.php:37 content/content.php:43
 msgid "Pages:"
 msgstr ""
 
@@ -356,8 +364,7 @@ msgstr ""
 
 #. translators: %s is search term
 #: search.php:21
-#, php-format
-msgid "Search Results for: %s"
+msgid "Search Results for: "
 msgstr ""
 
 #: searchform.php:12 searchform.php:16
@@ -387,6 +394,10 @@ msgstr ""
 msgid "MyStem"
 msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/mystem/"
+msgstr ""
+
 #. Description of the plugin/theme
 msgid ""
 "Convenient, clean and simple to use WordPress theme MyStem will help attract "
@@ -400,7 +411,8 @@ msgid ""
 "menu, logo and resource icon, edit the color scheme of the site, the content "
 "display options on the main page, add your own CSS code. The theme is fully "
 "adaptable, it provides convenient viewing on various devices. Supports "
-"multilanguage."
+"multilanguage. Support Privacy Policy link in footer. For demo, visit: "
+"https://wow-company.com/mystem-demo/"
 msgstr ""
 
 #. Author of the plugin/theme

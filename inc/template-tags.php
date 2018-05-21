@@ -117,11 +117,14 @@ if ( ! function_exists( 'mystem_credits_copyright' ) ) :
 		$site_info = get_bloginfo( 'description' ) . ' - ' . get_bloginfo( 'name' ) . ' &copy; ' . date_i18n( __('Y','mystem') );
 		$credits_copyright = get_theme_mod( 'mystem_credits_copyright' );
 		if ( ! empty( $credits_copyright ) ){
-			echo wp_kses_post( $credits_copyright );
+			$footer_text = wp_kses_post( $credits_copyright );
 		}
 		else {
-			echo esc_attr( $site_info );
+			$footer_text = esc_attr( $site_info );
 		}
-	
+		if ( function_exists( 'the_privacy_policy_link' ) ) {
+			$footer_text .= the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
+		}
+		echo $footer_text;	
 	}
 endif;

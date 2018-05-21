@@ -531,7 +531,7 @@ function mystem_color_scheme_css() {
 			color: ' . esc_attr( $second_color ) . ';
 		}
 
-		.main-navigation ul ul, .search-form .search-field, .entry-header, footer .tag-list a, footer .share-block, .comment-reply-title, .comments-title, .comment-list .parent, .widget-title, .tagcloud a, .widget_search .search-field, .page_search .search-field, .main-menu-container, .related-posts h4, .page-numbers  {
+		.main-navigation ul ul, .search-form .search-field, .entry-header, footer .tag-list a, footer .share-block, .comment-reply-title, .comments-title, .widget-title, .tagcloud a, .widget_search .search-field, .page_search .search-field, .main-menu-container, .related-posts h4, .page-numbers  {
 			border-color: ' . esc_attr( $second_color ) . ';
 		}
 		.sub-menu:before {

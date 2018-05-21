@@ -2,7 +2,7 @@
 Contributors: lobov
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.7
+Version: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, 
@@ -45,6 +45,11 @@ License: Creative Commons Zero (CC0) https://creativecommons.org/publicdomain/ze
 Source: https://www.pexels.com/photo/macbook-pro-beside-papers-669619/
 
 == Changelog ==
+
+= 1.0.9 =
+* Added: Privacy Policy link in footer
+* Added: Opt-in for commenter cookies
+* Added: Template page - Full Width without Title
 
 = 1.0.8 =
 * Fixed: Search term

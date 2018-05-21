@@ -108,6 +108,7 @@ if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( ge
 			'fields'				=> apply_filters( 'comment_form_default_fields', array(
 				'author'				=> '<p class="comment-form-author comment-form-field"><input id="author" name="author" type="text" placeholder="Name"' . $aria_req . ' /></p>',
 				'email'					=> '<p class="comment-form-email comment-form-field"><input id="email" name="email" type="text" placeholder="Email"' . $aria_req . ' /></p>',
+				'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">' . __( 'Save my name and email in this browser for the next time I comment.', 'mystem' ) . '</label></p>',
 			)	),
 			)
 		);
