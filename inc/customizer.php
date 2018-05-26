@@ -230,6 +230,35 @@ function mystem_customize_register( $wp_customize ) {
 		'section'	=> 'mystem_layout_design',
 		'type'    => 'checkbox',
 	) );
+	
+	// Hide Private Policy Link?
+	$wp_customize->add_setting( 'mystem_private_policy', array(
+		'default' => 0,
+		'sanitize_callback' => 'mystem_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'mystem_private_policy', array(
+		'label'		=> __( 'Hide private Policy Link?', 'mystem' ),
+		'section'	=> 'mystem_layout_design',
+		'type'    => 'checkbox',
+	) );
+	$wp_customize->add_setting( 'mystem_mobile_menu_left', array(
+		'default' => __( 'fas fa-bars', 'mystem' ),
+		'sanitize_callback' => 'mystem_sanitize_text',
+	) );	
+	$wp_customize->add_control( 'mystem_mobile_menu_left', array(
+		'label' => __( 'Mobile Left Menu Icon', 'mystem' ),
+		'section' => 'mystem_layout_design',
+		'settings' => 'mystem_mobile_menu_left',		
+	) );
+	$wp_customize->add_setting( 'mystem_mobile_menu_right', array(
+		'default' => __( 'fas fa-bars', 'mystem' ),
+		'sanitize_callback' => 'mystem_sanitize_text',
+	) );	
+	$wp_customize->add_control( 'mystem_mobile_menu_right', array(
+		'label' => __( 'Mobile Right Menu Icon', 'mystem' ),
+		'section' => 'mystem_layout_design',
+		'settings' => 'mystem_mobile_menu_right',		
+	) );
 
 	/** ===============
 	 * Content Options
@@ -495,9 +524,14 @@ function mystem_color_scheme_css() {
 		{
 			color: ' . esc_attr( $text_color ) . ';
 		}
+		.mobile-menu,
 		.header-area{			
 			background: ' . esc_attr( $header_background ) . ';
 		}
+		.mobile-right-menu,
+		.mobile-left-menu,
+		.mobile-menu .fa-times,
+		.mobile-menu .mobile-dropdown li:before,
 		.header-menu .fa::before,
 		.header-menu .fas::before,
 		.header-menu .fab::before,
@@ -563,7 +597,14 @@ function mystem_color_scheme_css() {
 		blockquote {
 			border-color: ' . esc_attr( $second_color ) . ';
 		}			
-		.main-navigation .menu li > a:after, .main-navigation .menu li li > a:after, .paging-navigation i, .page-title span, .author-social-links i:hover, .comment-reply-link, .tagcloud a,
+		.main-navigation .menu li > a:after, 
+		.main-navigation .menu li li > a:after, 
+		.main-navigation a:hover,
+		.paging-navigation i, 
+		.page-title span, 
+		.author-social-links i:hover, 
+		.comment-reply-link, 
+		.tagcloud a,
 		.alert-bar .alert-message .fa:first-child,
 		.entry-meta,
 		a,
@@ -587,10 +628,10 @@ function mystem_color_scheme_css() {
 			background:' . esc_attr( $color ) . ';
 		}
 		.widget_search .search-field, .page_search .search-field, .search-form .search-field {
-			border-radius: ' . esc_attr( $search_border ) . 'px;
+			border-radius: ' . esc_attr( $border ) . 'px;
 		}
 		.search-form .search-submit, .widget_search .search-submit, .page_search .search-submit {
-			border-radius:0 ' . esc_attr( $search_border ) . 'px ' . esc_attr( $search_border ) . 'px 0;
+			border-radius:0 ' . esc_attr( $border ) . 'px ' . esc_attr( $border ) . 'px 0;
 		}
 		@media screen and (max-width: 768px) {
 			.main-navigation .menu a:hover {

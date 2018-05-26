@@ -52,8 +52,10 @@
 		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'mystem' ),
 		'header'  => __( 'Header Menu (no drop-downs)', 'mystem' ),
+		'primary' => __( 'Primary Menu', 'mystem' ),
+		'mobileleft' => __( 'Mobile Left Menu', 'mystem' ),
+		'mobileright' => __( 'Mobile Right Menu', 'mystem' ),		
 		) );
 		
 		// Enable support for HTML5 markup.
@@ -141,7 +143,7 @@
 		wp_enqueue_style( 'mystem-googlefonts', '//fonts.googleapis.com/css?family=Pacifico|Quicksand:400italic,700italic,400,700' );
 		
 		// theme assets
-		wp_enqueue_script( 'mystem-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array(), null, true );
+		wp_enqueue_script( 'mystem-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array('jquery'), null, true );
 		
 		wp_enqueue_script( 'mystem-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js' );
 		

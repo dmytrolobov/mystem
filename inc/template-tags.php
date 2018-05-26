@@ -56,7 +56,7 @@ if ( ! function_exists( 'mystem_posted_on' ) ) :
 	?>
 	<span class="byline mystem-cat">
 		<i class="far fa-folder"></i>
-		<?php the_category(' '); ?>
+		<?php the_category(' / '); ?>
 	</span>
 	<span class="posted-on mystem-author">
 		<i class="far fa-user"></i>
@@ -122,7 +122,7 @@ if ( ! function_exists( 'mystem_credits_copyright' ) ) :
 		else {
 			$footer_text = esc_attr( $site_info );
 		}
-		if ( function_exists( 'the_privacy_policy_link' ) ) {
+		if ( function_exists( 'the_privacy_policy_link' ) && empty( get_theme_mod( 'mystem_private_policy' ) ) ) {
 			$footer_text .= the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 		}
 		echo $footer_text;	

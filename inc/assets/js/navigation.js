@@ -3,36 +3,31 @@
  *
  * Handles toggling the navigation menu for small screens.
  */
-( function() {
-	var container, button, menu;
+(function($) {
+	var $mobile_left_menu = $('.mobile-left-menu'),
+		$mobile_left = $('#mobile-left-menu'),		
+		$mobile_right_menu = $('.mobile-right-menu'),
+		$mobile_right = $('#mobile-right-menu');
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
+	$mobile_left_menu.on('click', { id: '#mobile-left-menu' }, showSideMenu );
+	$mobile_left.children('.fa-times').on('click', { id: '#mobile-left-menu' }, showSideMenu );
+
+	$mobile_right_menu.on('click', { id: '#mobile-right-menu' }, showSideMenu );
+	$mobile_right.children('.fa-times').on('click', { id: '#mobile-right-menu' }, showSideMenu );
+	
+	function showSideMenu(e) {		
+		var $menu = $(e.data.id);
+		toggleVisibility( $menu );		
 	}
-
-	button = container.getElementsByTagName( 'span' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
-
-	menu = container.getElementsByTagName( 'ul' )[0];
-
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
-
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
-	}
-
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
+	function toggleVisibility( togglableItem ) {
+		if( togglableItem.hasClass('closed') ) {
+			togglableItem
+				.removeClass('closed')
+				.addClass('open');
 		} else {
-			container.className += ' toggled';
+			togglableItem
+				.removeClass('open')
+				.addClass('closed');
 		}
-	};
-} )();
+	}
+})(jQuery);

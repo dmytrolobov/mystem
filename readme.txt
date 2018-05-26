@@ -2,7 +2,7 @@
 Contributors: lobov
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.9
+Version: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, 
@@ -46,8 +46,13 @@ Source: https://www.pexels.com/photo/macbook-pro-beside-papers-669619/
 
 == Changelog ==
 
+= 1.1 =
+* Added: Option 'Hide Private policy link'
+* Added: Custom menu for mobile device
+* Fixed: main style
+
 = 1.0.9 =
-* Added: Privacy Policy link in footer
+* Added: Privacy Policy link in the footer
 * Added: Opt-in for commenter cookies
 * Added: Template page - Full Width without Title
 

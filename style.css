@@ -1,10 +1,10 @@
 /*
 	Theme Name: MyStem	
-	Theme URI: https://wordpress.org/themes/mystem/
+	Theme URI: https://mystemplus.com/
 	Author: Dmytro Lobov
 	Author URI: https://profiles.wordpress.org/lobov
-	Description: Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage. Support Privacy Policy link in footer. For demo, visit: https://wow-company.com/mystem-demo/
-	Version:     1.0.9
+	Description: Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage. Support Privacy Policy link in footer. For demo, visit: https://mystemplus.com/mystem-demo/
+	Version:     1.1
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Text Domain: mystem
@@ -82,6 +82,7 @@ a img {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1100px;
+	/* padding: 0 10px; */
 }
 .inner {
 	position: relative;
@@ -119,7 +120,7 @@ button,
 input,
 select,
 textarea {	
-	font-family:Quicksand,sans-serif;	
+	font-family: Quicksand,sans-serif;	
 	font-size: 16px;
 	line-height: 1.5;
 }
@@ -327,7 +328,7 @@ input[type="button"] {
 }
 .main-navigation {
 	clear: both;
-	display: block;	
+	display: flex;	
 }
 .header-menu {
 	position: absolute;
@@ -341,16 +342,23 @@ input[type="button"] {
 	padding-left: 0;
 }
 .main-navigation li,
-.header-menu li {
-	float: left;
+.header-menu li {	
 	position: relative;	
+	display: inline-block;
 }
+
+.main-navigation li a,
+.header-menu li a{
+	font-family: Quicksand,sans-serif;	
+	font-weight: normal;
+}
+
 .header-menu li:not(:last-child) {
 	padding-right: 24px;
 }
 .main-navigation a,
-.menu-toggle {
-	display: block;	
+.menu-toggle {		
+	display:inline-block;
 	text-decoration: none;
 	padding: 0 10px;  
 	font-size: 1em;
@@ -371,7 +379,7 @@ input[type="button"] {
 	float: left;
 	left: 0;
 	position: absolute;
-	top: 70px;
+	top: 71px;
 	z-index: 99999;	
 	border: 1px solid;	
 }
@@ -389,37 +397,44 @@ input[type="button"] {
 	content: "\f105";
 	font-family: "Font Awesome 5 Free";
 	position: absolute;
-	right: 15px;
+	right: 0.75em;
 	font-weight: 900;	
 }
-.sub-menu a{	
-	font-weight: 400;
-	line-height: 44px;
+.sub-menu li:before{
+	position: absolute;
+	line-height: 36px;
+	font-size: 0.75em;
+	left: 2px;
 }
-.sub-menu a:hover{	
+.sub-menu a {		
 	font-weight: 400;
-	line-height: 44px;
+	line-height: 36px;	
+	font-size: 0.75em;
+	margin: 0 0.75em;
 }
 .sub-menu:before {
 	content: "";
-    border-style: solid;
-    border-width: 0 9px 9px 9px;   
-    height: 0;
-    position: absolute;
-    left: 15px;
-    top: -9px;
-    width: 0;
-    cursor: pointer;
+	border-style: solid;
+	border-width: 0 9px 9px 9px;   
+	height: 0;
+	position: absolute;
+	left: 15px;
+	top: -9px;
+	width: 0;
+	cursor: pointer;
+}
+.sub-menu .sub-menu:before {
+	border:none;
 }
 .header-menu ul ul {
 	display: none;
 }
 .main-navigation ul ul ul {
 	left: 100%;
-	top: 0;	
+	top: -1px;	
 }
-.main-navigation ul ul a {
-	width: 200px;
+.main-navigation ul ul a {	
+	width: 220px;
 }
 .main-navigation ul li:hover > ul {
 	display: block;	
@@ -508,14 +523,11 @@ input[type="button"] {
 
 /* Theme Search Widget */
 .search-form {
-	position: relative;
-	display: block;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	width: 250px;
-	float: right;
+	position: relative;	
 	line-height: 71px;	
+	flex-grow: 1;
+	text-align: right;
+	
 }
 .search-form .screen-reader-text {
 	display: none;
@@ -525,10 +537,11 @@ input[type="button"] {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0.5em 1.5em 0.5em 0.7em;
-	width: 100%;
+	max-width: 250%;
 	-webkit-appearance: none;
 	border: 1px solid;		
 	outline:none;	
+	
 }
 .search-form .search-submit {
 	position: absolute;
@@ -556,6 +569,65 @@ input[type="button"] {
 	content: '\f002';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
+}
+
+/*--------------------------------------------------------------
+	Mobile Menu
+--------------------------------------------------------------*/
+.mobile-right-menu, .mobile-left-menu{			
+		display: none;
+	}
+	
+.mobile-menu{
+	width:270px;
+	height:100%;
+	padding-bottom:100px;	
+	position:fixed;
+	top:0;
+	z-index:10000;
+	overflow:auto;
+	transition:all .3s ease-in-out
+}
+
+.mobile-menu.open.left{
+	left:0
+}
+.mobile-menu.open.right{
+	right:0
+}
+.mobile-menu.closed.left{
+	left:-270px
+}
+.mobile-menu.closed.right{
+	right:-270px
+}
+.mobile-menu .fa-times{
+	width:14px;
+	height:14px;	    
+	position:absolute;
+	top:16px;
+	right:18px;
+	cursor:pointer
+}
+.mobile-menu .mobile-dropdown{
+	margin: 16px 0 1em 1em;
+}
+.mobile-menu .mobile-dropdown ul, .mobile-menu .mobile-dropdown li{
+	width:100%; 
+	list-style: none;
+}
+.mobile-menu .mobile-dropdown li a{
+	font-family: Quicksand,sans-serif;
+	font-weight: normal;	
+}
+.mobile-menu .mobile-dropdown li:before{
+	margin-right: 8px;		
+}
+.mobile-menu.right{
+	right:0
+}
+.mobile-menu.left{
+	left:0
 }
 
 /*--------------------------------------------------------------
@@ -1194,7 +1266,7 @@ h4.footer-widget-title{
 	padding: 0 0.25em 0 0.5em;
 }
 .site-info span[role=separator]::before {
-    content: '\002f';
+	content: '\002f';
 }
 
 /*--------------------------------------------------------------
@@ -1276,10 +1348,37 @@ object {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
 	.site-header {
+		/* text-align: center; */
+	}
+	.header-elements {
+		display:flex;
+	}
+	.header-elements span {
+		width:100%;		
+	}
+	.mobile-menu .mobile-dropdown .sub-menu {
+			display: none;
+	}
+	.mobile-right-menu, .mobile-left-menu{
+		font-size: 40px;	
+		display: block;
+	}
+	
+	.mobile-left-menu {
+		text-align: left;
+	}
+	.site-title {
 		text-align: center;
+	}
+	.mobile-right-menu {
+		text-align: right;
+	}	
+	.search-form .search-field {
+		width: 100%;
 	}
 	.header-menu {
 		position: static;
+		display:none;
 	}
 	.header-menu ul {
 		text-align: center;

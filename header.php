@@ -18,12 +18,26 @@
 		<?php endif; ?>		
 		<?php wp_head(); ?>
 	</head>
-	
 	<body <?php body_class(); ?>>
-		
 		<div class="header-area full">
 			<header id="masthead" class="site-header main inner" role="banner">
-				<div class="header-elements">
+				<div class="header-elements">					
+					<?php if ( wp_nav_menu( array( 'theme_location' => 'mobileleft', 'echo' => false, 'fallback_cb' => '__return_false' ) ) !== false) { 
+					?>
+					<span class="mobile-left-menu"><i class="<?php echo get_theme_mod( 'mystem_mobile_menu_left', 'fas fa-bars' );?>"></i></span>
+					<div id="mobile-left-menu" class="mobile-menu left closed">					
+						<i class="fas fa-times"></i>
+						<?php
+							wp_nav_menu( array( 'theme_location' => 'mobileleft', 'menu_class' => 'mobile-dropdown' ) );
+						?>
+					</div>
+					<?php
+					} 
+					else { ?>
+					<span></span>
+					<?php
+					}				
+					?>
 					<span class="site-title">
 						<?php if ( has_custom_logo() ) {
 							the_custom_logo();
@@ -33,7 +47,23 @@
 							<?php echo esc_html( $title ); ?>
 						</a>
 						<?php } ?>
-					</span>
+					</span>					
+					<?php if ( wp_nav_menu( array( 'theme_location' => 'mobileright', 'echo' => false, 'fallback_cb' => '__return_false' ) ) !== false) { 
+					?>
+					<span class="mobile-right-menu"><i class="<?php echo get_theme_mod( 'mystem_mobile_menu_right', 'fas fa-bars' );?>"></i></span>
+					<div id="mobile-right-menu" class="mobile-menu right closed">					
+						<i class="fas fa-times"></i>
+						<?php
+							wp_nav_menu( array( 'theme_location' => 'mobileright', 'menu_class' => 'mobile-dropdown' ) );
+						?>
+					</div>
+					<?php
+					} 
+					else { ?>
+					<span></span>
+					<?php
+					}				
+					?>
 					<?php if ( ! get_theme_mod( 'mystem_header_menu' ) ) : ?>
 					<nav id="header-navigation" class="header-menu" role="navigation">
 						<?php wp_nav_menu( array(
@@ -47,9 +77,8 @@
 			<?php if ( ! get_theme_mod( 'mystem_primary_menu' ) ) : ?>
 			<div class="main-menu-container">
 				<nav id="site-navigation" class="main main-navigation clear" role="navigation">
-					<span class="menu-toggle"><?php echo '<i class="fas fa-bars"></i> ' . esc_html_e( 'Menu', 'mystem' ); ?></span>
-					<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mystem' );?></a>
 					
+					<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mystem' );?></a>
 					<?php wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'fallback_cb' => 'mystem_menu_fallback',
@@ -63,8 +92,6 @@
 			</div>
 			<?php endif; ?>
 		</div>
-		
 		<div class="main-content-area full">
 			<div class="main">
 				<div id="content" class="site-content inner">
-								
