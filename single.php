@@ -16,7 +16,7 @@ get_header(); ?>
 		
 		<?php get_template_part( 'content/content', 'single' ); ?>
 		
-		<?php if ( get_theme_mod( 'mystem_post_navigation' ) == 1 ) : ?>
+		<?php if ( ! empty( get_theme_mod( 'mystem_post_navigation', '1' ) ) ) : ?>
 		<?php mystem_post_nav(); ?>
 		<?php endif; ?>
 		

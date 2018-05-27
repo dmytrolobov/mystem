@@ -11,8 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>		
 <?php
 // display featured image
-$featured_image = get_theme_mod( 'mystem_featured_image' );
-if ( has_post_thumbnail() && ! empty( $featured_image ) ) :?>
+if ( has_post_thumbnail() && ! empty( get_theme_mod( 'mystem_featured_image', '1' ) ) ) :?>
 	<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail( 'featured-img', array(
 		'class' => 'featured-img',
 	) );?></a>
