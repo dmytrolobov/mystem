@@ -52,7 +52,7 @@
 		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-		'header'  => __( 'Header Menu (no drop-downs)', 'mystem' ),
+		'header'  => __( 'Header Menu', 'mystem' ),
 		'primary' => __( 'Primary Menu', 'mystem' ),
 		'mobileleft' => __( 'Mobile Left Menu', 'mystem' ),
 		'mobileright' => __( 'Mobile Right Menu', 'mystem' ),		
@@ -227,3 +227,16 @@
 		}
 	}
 	add_filter( 'widget_tag_cloud_args', 'mystem_change_tag_cloud_font_sizes' );
+	
+	if( ! function_exists( 'mystem_plugins' ) ) {
+		function mystem_plugins() {
+			if ( is_admin() ) {
+				// Recommend plugins
+				require_once( get_template_directory() .'/inc/plugins/class-tgm-plugin-activation.php' );
+				require_once( get_template_directory() .'/inc/plugins/tgm-plugin-activation.php' );
+
+			}
+		}
+		
+	}	
+	add_action( 'after_setup_theme', 'mystem_plugins', 4 );

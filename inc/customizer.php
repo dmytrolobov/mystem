@@ -510,6 +510,7 @@ function mystem_color_scheme_css() {
 			background: ' . esc_attr( $background_color ) . ';
 			color: ' . esc_attr( $text_color ) . ';
 		}
+		.header-menu .sub-menu a,
 		.main-navigation a,
 		.navigation a:hover,
 		.comment-navigation a:hover,
@@ -536,7 +537,8 @@ function mystem_color_scheme_css() {
 		.header-menu .fas::before,
 		.header-menu .fab::before,
 		.header-menu .far::before,
-		.site-title a,.site-title a:hover, .header-menu a {
+		.site-title a,.site-title a:hover, .header-menu a,
+		.header-menu .sub-menu a:hover{
 			color: ' . esc_attr( $header_color ) . ';
 		}
 		.footer-area {
@@ -571,8 +573,14 @@ function mystem_color_scheme_css() {
 		.sub-menu:before {
 			border-color: transparent transparent ' . esc_attr( $second_color ) . ' transparent;
 		}
+		.header-menu .sub-menu:before {
+			border-color: transparent transparent ' . esc_attr( $blocks_color ) . ' transparent;
+		}
+		.header-menu ul ul{
+			border-color: ' . esc_attr( $second_color ) . ';
+		}
 
-		.main-menu-container, .main-navigation ul li:hover > ul, .navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .paging-navigation, .related-posts, .page-numbers {
+		.header-menu .sub-menu,.main-menu-container, .main-navigation ul li:hover > ul, .navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .paging-navigation, .related-posts, .page-numbers {
 			background: ' . esc_attr( $blocks_color ) . ';
 		}
 
@@ -588,7 +596,7 @@ function mystem_color_scheme_css() {
 			border-radius: ' . esc_attr( $border ) . 'px ' . esc_attr( $border ) . 'px 0 0;
 		}
 
-		.navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .tagcloud a, footer .tag-list a, .paging-navigation, .related-posts, .page-numbers {
+		.header-menu .sub-menu, .navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .tagcloud a, footer .tag-list a, .paging-navigation, .related-posts, .page-numbers {
 			-webkit-border-radius: ' . esc_attr( $border ) . 'px;
 			border-radius: ' . esc_attr( $border ) . 'px;
 			

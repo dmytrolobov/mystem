@@ -4,7 +4,7 @@
 	Author: Dmytro Lobov
 	Author URI: https://profiles.wordpress.org/lobov
 	Description: Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage. Support Privacy Policy link in footer. For demo, visit: https://mystemplus.com/mystem-demo/
-	Version:     1.1.1
+	Version:     1.1.2
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Text Domain: mystem
@@ -317,6 +317,31 @@ input[type="button"] {
 	border-radius: 3px;
 	cursor: pointer;
 }
+/*--------------------------------------------------------------
+	Header
+--------------------------------------------------------------*/
+.header-area {
+	background: none;
+}
+.site-header.inner {
+	padding: 0;
+}
+.landing-template .site-header {
+	text-align: center;
+}
+.header-elements {
+	padding: 15px 15px;
+	display: flex;
+	flex-wrap: nowrap;
+	line-height: 60px;
+}
+.site-title {
+	/* display: inline-block; */
+	font: normal 40px/60px 'Pacifico', 'cursive';
+}
+.site-title a {
+	text-decoration: none;
+}
 
 /*--------------------------------------------------------------
 	Menus & Navigation
@@ -330,10 +355,9 @@ input[type="button"] {
 	clear: both;
 	display: flex;	
 }
-.header-menu {
-	position: absolute;
-	right: 15px;
-	top: 32px;
+.header-menu {	
+	flex-grow: 1;
+	text-align: right;
 }
 .main-navigation ul,
 .header-menu ul {
@@ -356,6 +380,70 @@ input[type="button"] {
 .header-menu li:not(:last-child) {
 	padding-right: 24px;
 }
+.header-menu a {	
+	font-size: 1em;	
+	line-height: 60px;
+}
+
+
+/* Header submenu */
+
+.header-menu ul ul {	
+	float: left;
+	left: 0;
+	position: absolute;
+	top: 51px;
+	z-index: 99999;	
+	border: 1px solid;
+	visibility:hidden;
+	opacity:0;
+	filter:alpha(opacity=0);
+	-webkit-transition:200ms ease;
+	-moz-transition:200ms ease;
+	-o-transition:200ms ease;
+	transition:200ms ease;
+}
+.header-menu .menu li > a:after {
+	font-family: "Font Awesome 5 Free";
+	content: "\f107";
+	font-weight: 900;
+	margin-left: 5px;	
+}
+.header-menu .menu li > a:only-child:after {
+	content: "";
+}
+.header-menu .menu li li > a:after {
+	content: "\f105";
+	font-family: "Font Awesome 5 Free";
+	position: absolute;
+	right: 0.75em;
+	font-weight: 900;	
+}
+.header-menu ul li:hover > ul {
+	visibility:visible;
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.header-menu ul ul ul {
+	display:none;
+}
+.header-menu ul ul li {
+	width: 165px;	
+	line-height:36px;
+}
+.header-menu .sub-menu {
+	text-align: left;	
+}
+.header-menu .sub-menu a {
+	padding-left: 8px;
+	
+}
+.header-menu .sub-menu li:before{
+	margin-right: 8px;
+	line-height: 36px;
+}
+
+
 .main-navigation a,
 .menu-toggle {		
 	display:inline-block;
@@ -367,21 +455,24 @@ input[type="button"] {
 	line-height: 71px;
 	transition: all .15s ease-in-out;
 }
-.header-menu a {	
-	font-size: 1em;
-}
 
 .skip-link.screen-reader-text {
 	padding: 0;
 }
 .main-navigation ul ul {
-	display: none;
 	float: left;
 	left: 0;
 	position: absolute;
 	top: 71px;
 	z-index: 99999;	
 	border: 1px solid;	
+	visibility:hidden;
+	opacity:0;
+	filter:alpha(opacity=0);
+	-webkit-transition:200ms ease;
+	-moz-transition:200ms ease;
+	-o-transition:200ms ease;
+	transition:200ms ease;
 }
 
 .main-navigation .menu li > a:after {
@@ -409,26 +500,25 @@ input[type="button"] {
 .sub-menu a {		
 	font-weight: 400;
 	line-height: 36px;	
-	font-size: 0.75em;
+	font-size: .85em;
 	margin: 0 0.75em;
 }
-.sub-menu:before {
+.sub-menu:before{
 	content: "";
 	border-style: solid;
 	border-width: 0 9px 9px 9px;   
 	height: 0;
-	position: absolute;
-	left: 15px;
+	position: absolute;	
 	top: -9px;
 	width: 0;
 	cursor: pointer;
+	left: 15px;
 }
+
 .sub-menu .sub-menu:before {
 	border:none;
 }
-.header-menu ul ul {
-	display: none;
-}
+
 .main-navigation ul ul ul {
 	left: 100%;
 	top: -1px;	
@@ -437,7 +527,9 @@ input[type="button"] {
 	width: 220px;
 }
 .main-navigation ul li:hover > ul {
-	display: block;	
+	visibility:visible;
+	opacity:1;
+	filter:alpha(opacity=100);		
 }
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
@@ -450,14 +542,8 @@ input[type="button"] {
 .header-menu .fas::before,
 .header-menu .fab::before,
 .header-menu .far::before
-{
-	display: block;
-	float: left;
-	width: 16px;
-	margin: 0 10px 0 -4px;
-  font-size: 16px;
-  line-height: inherit;
-  text-align: center;	
+{	
+  margin-right: 8px;  
 }
 
 /* Small menu */
@@ -575,9 +661,9 @@ input[type="button"] {
 	Mobile Menu
 --------------------------------------------------------------*/
 .mobile-right-menu, .mobile-left-menu{			
-		display: none;
-	}
-	
+	display: none;
+}
+
 .mobile-menu{
 	width:270px;
 	height:100%;
@@ -706,30 +792,6 @@ input[type="button"] {
 .site-footer:after {
 	clear: both;
 }
-
-/*--------------------------------------------------------------
-	Header
---------------------------------------------------------------*/
-.header-area {
-	background: none;
-}
-.site-header.inner {
-	padding: 0;
-}
-.landing-template .site-header {
-	text-align: center;
-}
-.header-elements {
-	padding: 15px 15px;
-}
-.site-title {
-	display: inline-block;
-	font: normal 40px/60px 'Pacifico', 'cursive';
-}
-.site-title a {
-	text-decoration: none;
-}
-
 
 /*--------------------------------------------------------------
 	Content
@@ -1357,7 +1419,7 @@ object {
 		width:100%;		
 	}
 	.mobile-menu .mobile-dropdown .sub-menu {
-			display: none;
+		display: none;
 	}
 	.mobile-right-menu, .mobile-left-menu{
 		font-size: 40px;	
