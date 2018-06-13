@@ -14,23 +14,23 @@
 		<h1 class="page-title"><?php esc_attr_e( 'Nothing Found', 'mystem' ); ?></h1>
 	</header>
 
-	<div class="page-content">
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+	<div class="page-content hentry">		
+			<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php
-				/* translators: %s is url to new post */
-				printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'mystem' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+				<p><?php
+					/* translators: %s is url to new post */
+					printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'mystem' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-		<?php elseif ( is_search() ) : ?>
+			<?php elseif ( is_search() ) : ?>
 
-			<p><?php esc_attr_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'mystem' ); ?></p>
-			<?php get_search_form(); ?>
+				<p><?php esc_attr_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'mystem' ); ?></p>
+				<?php get_search_form(); ?>
 
-		<?php else : ?>
+			<?php else : ?>
 
-			<p><?php esc_attr_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'mystem' ); ?></p>
-			<?php get_search_form(); ?>
+				<p><?php esc_attr_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'mystem' ); ?></p>
+				<?php get_search_form(); ?>
 
-		<?php endif; ?>
+			<?php endif; ?>		
 	</div>
 </section>

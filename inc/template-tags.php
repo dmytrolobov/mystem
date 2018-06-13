@@ -8,8 +8,8 @@
 		* @subpackage MyStem
 		* @since MyStem 1.0
 	*/
-
-if ( ! function_exists( 'mystem_post_nav' ) ) :
+	
+	if ( ! function_exists( 'mystem_post_nav' ) ) :
 	/**
 		* Display navigation to next/previous post when applicable.
 		*
@@ -19,7 +19,7 @@ if ( ! function_exists( 'mystem_post_nav' ) ) :
 		// Don't print empty markup if there's nowhere to navigate.
 		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 		$next     = get_adjacent_post( false, '', false );
-
+		
 		if ( ! $next && ! $previous ) {
 			return;
 		}
@@ -35,9 +35,9 @@ if ( ! function_exists( 'mystem_post_nav' ) ) :
 	</nav>
 	<?php
 	}
-endif;
-
-if ( ! function_exists( 'mystem_posted_on' ) ) :
+	endif;
+	
+	if ( ! function_exists( 'mystem_posted_on' ) ) :
 	/**
 		* Prints HTML with meta information for the current post-date/time and author.
 	*/
@@ -46,12 +46,12 @@ if ( ! function_exists( 'mystem_posted_on' ) ) :
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 		}
-
+		
 		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
 		);
 	?>
 	<span class="byline mystem-cat">
@@ -62,8 +62,8 @@ if ( ! function_exists( 'mystem_posted_on' ) ) :
 		<i class="far fa-user"></i>
 		<?php
 			printf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				esc_html( get_the_author() )
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_html( get_the_author() )
 			);
 		?>
 	</span>
@@ -71,8 +71,8 @@ if ( ! function_exists( 'mystem_posted_on' ) ) :
 		<i class="far fa-clock"></i>
 		<?php
 			printf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-				esc_url( get_permalink() ),
-				 $time_string
+			esc_url( get_permalink() ),
+			$time_string
 			);
 		?>
 	</span>
@@ -80,9 +80,9 @@ if ( ! function_exists( 'mystem_posted_on' ) ) :
 	<span class="comments-link"><i class="far fa-comment"></i><?php comments_popup_link( __( 'Comments', 'mystem' ), __( '1 comment', 'mystem' ), __( '% comments', 'mystem' ) ); ?></span>
 	<?php endif;
 	}
-endif;
-
-if ( ! function_exists( 'mystem_related_posts' ) ) :
+	endif;
+	
+	if ( ! function_exists( 'mystem_related_posts' ) ) :
 	function mystem_related_posts() {
 		$tags = wp_get_post_tags( get_the_ID() );
 		if ( $tags ) {
@@ -91,9 +91,9 @@ if ( ! function_exists( 'mystem_related_posts' ) ) :
 				$tag_ids[] = $individual_tag->term_id;
 			}
 			$args = array(
-				'tag__in' => $tag_ids,
-				'post__not_in' => array( absint( get_the_ID() ) ),
-				'showposts' => get_theme_mod( 'mystem_post_related_posts_number', '5' ),
+			'tag__in' => $tag_ids,
+			'post__not_in' => array( absint( get_the_ID() ) ),
+			'showposts' => get_theme_mod( 'mystem_post_related_posts_number', '5' ),
 			);
 			$my_query = new wp_query( $args );
 			if ( $my_query->have_posts() ) {
@@ -109,10 +109,10 @@ if ( ! function_exists( 'mystem_related_posts' ) ) :
 			wp_reset_postdata();
 		}
 	}
-
-endif;
-
-if ( ! function_exists( 'mystem_credits_copyright' ) ) :
+	
+	endif;
+	
+	if ( ! function_exists( 'mystem_credits_copyright' ) ) :
 	function mystem_credits_copyright() {
 		$site_info = get_bloginfo( 'description' ) . ' - ' . get_bloginfo( 'name' ) . ' &copy; ' . date_i18n( __('Y','mystem') );
 		$credits_copyright = get_theme_mod( 'mystem_credits_copyright' );
@@ -127,4 +127,4 @@ if ( ! function_exists( 'mystem_credits_copyright' ) ) :
 		}
 		echo $footer_text;	
 	}
-endif;
+	endif;

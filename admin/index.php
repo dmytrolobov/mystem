@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $query['return'] = admin_url();
 $link_with_return = add_query_arg( $query, admin_url( 'customize.php' ) );
-$logo = get_template_directory_uri().'/admin/image/wow-company.png.';
+$logo = get_template_directory_uri().'/admin/image/icon.png.';
 ?>
 <style>
 .about-wrap .wow-badge {
@@ -48,7 +48,7 @@ $logo = get_template_directory_uri().'/admin/image/wow-company.png.';
 		<br/>
 		<strong><?php esc_attr_e( 'We hope you enjoy it!', 'mystem' ); ?> </strong>
 	</p>
-	<a href="https://profiles.wordpress.org/wpcalc" target="_blank" class="wow-badge">Wow-Company</a>
+	<a href="https://mystemplus.com/" target="_blank" class="wow-badge">MyStem+</a>
 	<?php
 		$current = ( isset( $_GET['tab'] ) ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'plugins';
 		$tabs = array(			

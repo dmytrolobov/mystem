@@ -241,24 +241,27 @@ function mystem_customize_register( $wp_customize ) {
 		'section'	=> 'mystem_layout_design',
 		'type'    => 'checkbox',
 	) );
+	
+	// Mobile menus icons	
 	$wp_customize->add_setting( 'mystem_mobile_menu_left', array(
 		'default' => __( 'fas fa-bars', 'mystem' ),
 		'sanitize_callback' => 'mystem_sanitize_text',
 	) );	
-	$wp_customize->add_control( 'mystem_mobile_menu_left', array(
+	$wp_customize->add_control( new MyStem_Customizer_Icon_Picker_Control( $wp_customize, 'mystem_mobile_menu_left', array(
 		'label' => __( 'Mobile Left Menu Icon', 'mystem' ),
 		'section' => 'mystem_layout_design',
 		'settings' => 'mystem_mobile_menu_left',		
-	) );
+	) ) );	
+	
 	$wp_customize->add_setting( 'mystem_mobile_menu_right', array(
 		'default' => __( 'fas fa-bars', 'mystem' ),
 		'sanitize_callback' => 'mystem_sanitize_text',
 	) );	
-	$wp_customize->add_control( 'mystem_mobile_menu_right', array(
+	$wp_customize->add_control( new MyStem_Customizer_Icon_Picker_Control( $wp_customize, 'mystem_mobile_menu_right', array(
 		'label' => __( 'Mobile Right Menu Icon', 'mystem' ),
 		'section' => 'mystem_layout_design',
 		'settings' => 'mystem_mobile_menu_right',		
-	) );
+	) ) );
 
 	/** ===============
 	 * Content Options
@@ -521,7 +524,8 @@ function mystem_color_scheme_css() {
 		.bypostauthor .comment-metadata a:hover,
 		.bypostauthor .comment-meta a.url:hover,
 		.widget a:hover,
-		.related-posts a:hover
+		.related-posts a:hover,
+		.entry-meta .price
 		{
 			color: ' . esc_attr( $text_color ) . ';
 		}
@@ -537,8 +541,8 @@ function mystem_color_scheme_css() {
 		.header-menu .fas::before,
 		.header-menu .fab::before,
 		.header-menu .far::before,
-		.site-title a,.site-title a:hover, .header-menu a,
-		.header-menu .sub-menu a:hover{
+		.site-title a,.site-title a:hover, .header-menu a
+		{
 			color: ' . esc_attr( $header_color ) . ';
 		}
 		.footer-area {
@@ -595,6 +599,11 @@ function mystem_color_scheme_css() {
 		.featured-img {
 			border-radius: ' . esc_attr( $border ) . 'px ' . esc_attr( $border ) . 'px 0 0;
 		}
+		@media screen and (min-width: 767px) {
+			.cat-classic article .post-img img {
+				border-radius: ' . esc_attr( $border ) . 'px  0 0 ' . esc_attr( $border ) . 'px;
+			}
+		}
 
 		.header-menu .sub-menu, .navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .tagcloud a, footer .tag-list a, .paging-navigation, .related-posts, .page-numbers {
 			-webkit-border-radius: ' . esc_attr( $border ) . 'px;
@@ -614,14 +623,15 @@ function mystem_color_scheme_css() {
 		.comment-reply-link, 
 		.tagcloud a,
 		.alert-bar .alert-message .fa:first-child,
-		.entry-meta,
+		.entry-meta,		
 		a,
 		.entry-header a:hover,
 		.comment-reply-link:hover,
 		.widget:hover .widget-title:before,
 		.product-title:hover,
 		.view-details:hover,
-		.navigation.post-navigation .far
+		.navigation.post-navigation .far,
+		.header-menu .sub-menu a:hover
 		{
 			color: ' . esc_attr( $color ) . ';
 		}
@@ -673,3 +683,48 @@ function mystem_customize_preview_js() {
 	wp_enqueue_script( 'mystem_customizer', get_template_directory_uri() . '/inc/assets/js/customizer.js', array( 'customize-preview' ) );
 }
 add_action( 'customize_preview_init', 'mystem_customize_preview_js' );
+
+/**
+	* Class for control Icon Picker in Customizer.
+ */
+ 
+ if ( ! class_exists( 'WP_Customize_Control' ) ) {
+		return NULL;
+	}
+	
+class MyStem_Customizer_Icon_Picker_Control extends WP_Customize_Control {
+		public $type = 'mystem-icon-picker';
+		public function enqueue() {
+			// font awesome stylesheet
+			wp_enqueue_style( 'mystem-font-awesome', get_template_directory_uri() . '/font-awesome/css/fontawesome-all.min.css', array(), '5.0.11', 'all' );
+			
+			// include icon picker
+			wp_enqueue_script('mystem-fonticonpicker', get_template_directory_uri() . '/inc/assets/fonticonpicker/js/fonticonpicker.min.js', array('jquery'));
+					
+			wp_enqueue_style('mystem-fonticonpicker', get_template_directory_uri() . '/inc/assets/fonticonpicker/css/fonticonpicker.min.css');
+					
+			wp_enqueue_style('mystem-fonticonpicker-darkgrey', get_template_directory_uri() . '/inc/assets/fonticonpicker/css/fonticonpicker.darkgrey.min.css');
+			
+			wp_enqueue_script( 'mystem-icon-picker-control', get_template_directory_uri() . '/inc/assets/js/icon-picker-control.js', array(), '', true );
+		}
+		public function render_content() {
+			if ( empty( $this->choices ) ) {
+				$icons = mystem_fontawesome_icons();
+				$this->choices = $icons;
+			}
+		?>
+		<label>
+			<?php if ( ! empty( $this->label ) ) : ?>
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php endif;
+			if ( ! empty( $this->description ) ) : ?>
+			<span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+			<?php endif; ?>
+			<select class="my-fonticon-picker-icon-control" id="<?php echo esc_attr( $this->id ); ?>">
+				<?php foreach ( $this->choices as $value ) : ?>
+				<option value="<?php echo esc_attr( $value ); ?>" <?php echo selected( $this->value(), $value, false ); ?>><?php echo esc_attr( $value ); ?></option>
+				<?php endforeach; ?>
+			</select>
+		</label>
+		<?php }
+	}

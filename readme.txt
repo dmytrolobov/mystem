@@ -9,7 +9,7 @@ Tags: blog, two-columns, left-sidebar, right-sidebar, custom-background, custom-
 
 == Description ==
 
-Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Supports multilanguage. For demo, visit: https://wow-company.com/mystem-demo/
+Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Features: GDPR (Privacy Policy link in footer); Supports multilanguage; Live Customizer; Responsive layout; Customizing the color scheme; 2 customizable menus; Mobile device menus; Three additional widgets (Categories, Recent Posts, Resent Comments); Category templates. Good use with the plugin MyStem Extra. For demo, visit: https://mystemplus.com/demo/
 
 == Installation ==
 
@@ -45,6 +45,11 @@ License: Creative Commons Zero (CC0) https://creativecommons.org/publicdomain/ze
 Source: https://www.pexels.com/photo/macbook-pro-beside-papers-669619/
 
 == Changelog ==
+
+= 1.2 =
+* Added: 3 Widgets (Categories, Recent Posts, Resent Comments).
+* Added: font iconpicker in Customizer.
+* Fixed: minor bugs in the style.
 
 = 1.1.2 =
 * Added: Submenu into header menu.

@@ -25,16 +25,16 @@ function mystem_tgmpa_register() {
 		),
 		
 		array(
-			'name'				=> 'Fake Notification (Herd Effect)',
+			'name'				=> 'Fake Notification',
 			'slug'				=> 'mwp-herd-effect', 
 			'required'			=> false,
 			'force_activation'	=> false,
 		),
 		
 		array(
-			'name'				=> 'Facebook Login',
-			'slug'				=> 'wow-facebook-login', 
-			'required'			=> false,
+			'name'				=> 'MyStem Extra',
+			'slug'				=> 'mystem-extra', 
+			'required'			=> true,
 			'force_activation'	=> false,
 		),
 		

@@ -7,6 +7,8 @@
 		* @since MyStem 1.0
 	*/	
 	
+	define ("MyStem", "1.2");
+	
 	if ( ! function_exists( 'mystem_setup' ) ) :
 	/**
 		* Sets up theme defaults and registers support for various WordPress features.
@@ -34,9 +36,9 @@
 		add_theme_support( 'title-tag' );
 		
 		/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
+			* This theme styles the visual editor to resemble the theme style,
+			* specifically font, colors, icons, and column width.
+		*/
 		add_editor_style( array( 'inc/assets/css/editor-style.css', get_template_directory() ) );
 		
 		// Enable support for Custom Logo for site.
@@ -120,8 +122,7 @@
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="footer-widget-title">',
 		'after_title'   => '</h4>',
-		) );
-		
+		) );		
 	}
 	add_action( 'widgets_init', 'mystem_widgets_init' );
 	
@@ -145,28 +146,13 @@
 		// theme assets
 		wp_enqueue_script( 'mystem-navigation', get_template_directory_uri() . '/inc/assets/js/navigation.js', array('jquery'), null, true );
 		
-		wp_enqueue_script( 'mystem-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js' );
+		wp_enqueue_script( 'mystem-skip-link-focus-fix', get_template_directory_uri() . '/inc/assets/js/skip-link-focus-fix.js' );		
 		
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 	}
-	add_action( 'wp_enqueue_scripts', 'mystem_scripts' );
-	
-	/**
-		* Custom template tags for this theme.
-	*/
-	require get_template_directory() . '/inc/template-tags.php';
-	
-	/**
-		* Custom functions that act independently of the theme templates.
-	*/
-	require get_template_directory() . '/inc/extras.php';
-	
-	/**
-		* Customizer additions.
-	*/
-	require get_template_directory() . '/inc/customizer.php';
+	add_action( 'wp_enqueue_scripts', 'mystem_scripts' );	
 	
 	/** ===============
 		* Adjust excerpt length
@@ -225,7 +211,7 @@
 			$args['largest'] = '8';
 			return $args;
 		}
-	}
+		}
 	add_filter( 'widget_tag_cloud_args', 'mystem_change_tag_cloud_font_sizes' );
 	
 	if( ! function_exists( 'mystem_plugins' ) ) {
@@ -234,9 +220,29 @@
 				// Recommend plugins
 				require_once( get_template_directory() .'/inc/plugins/class-tgm-plugin-activation.php' );
 				require_once( get_template_directory() .'/inc/plugins/tgm-plugin-activation.php' );
-
+				
 			}
 		}
 		
 	}	
 	add_action( 'after_setup_theme', 'mystem_plugins', 4 );
+	
+	/**
+		* Custom template tags for this theme.
+	*/
+	require get_template_directory() . '/inc/template-tags.php';
+	
+	/**
+		* Custom functions that act independently of the theme templates.
+	*/
+	require get_template_directory() . '/inc/extras.php';
+	
+	/**
+		* Customizer additions.
+	*/
+	require get_template_directory() . '/inc/customizer.php';	
+	
+	/**
+		* Theme Widgets .
+	*/
+require get_template_directory() . '/inc/widgets.php';
