@@ -12,10 +12,10 @@ class MyStem_Widget_Recent_Comments extends WP_Widget {
 	public function __construct() {
 		$widget_ops = array(
 			'classname' => 'widget_mystem_recent_comments',
-			'description' => __( 'Your site&#8217;s most recent comments.' ),
+			'description' => __( 'Your site&#8217;s most recent comments.', 'mystem' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'mystem-recent-comments', __( 'MyStem Recent Comments' ), $widget_ops );
+		parent::__construct( 'mystem-recent-comments', __( 'MyStem Recent Comments', 'mystem' ), $widget_ops );
 		$this->alt_option_name = 'widget_mystem_recent_comments';		
 	}
 
@@ -26,7 +26,7 @@ class MyStem_Widget_Recent_Comments extends WP_Widget {
 
 		$output = '';
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Comments', 'mystem' );
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
@@ -67,7 +67,7 @@ class MyStem_Widget_Recent_Comments extends WP_Widget {
 				$output .= '<li class="recentcomments">';
 				$output .= '<span class="author-gravatar">' . get_avatar( $comment, 75 ) . '</span>';
 				/* translators: comments widget: 1: comment author, 2: post link */
-				$output .= sprintf( _x( '<span class="recentcomments-content">%1$s on <br/> %2$s</span>', 'widgets' ),
+				$output .= sprintf( _x( '<span class="recentcomments-content">%1$s on <br/> %2$s</span>', 'mystem' ),
 					'<span class="comment-author-link">' . get_comment_author( $comment ) . '</span>',
 					'<a href="' . esc_url( get_comment_link( $comment ) ) . '">' . get_the_title( $comment->comment_post_ID ) . '</a>'
 				);
@@ -108,10 +108,10 @@ class MyStem_Widget_Recent_Comments extends WP_Widget {
 		$title = isset( $instance['title'] ) ? $instance['title'] : '';
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'mystem' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of comments to show:', 'mystem' ); ?></label>
 		<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" /></p>
 		<?php
 	}

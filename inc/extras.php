@@ -30,9 +30,9 @@
 			$classes[] = 'group-blog';
 		}
 		
-		if ( get_theme_mod( 'stem_layout' ) == 'sc' ) {
+		if ( get_theme_mod( 'mystem_layout' ) == 'sc' ) {
 			$classes[] = 'sidebar-content';
-		}
+		}		
 		
 		return $classes;
 	}

@@ -4,7 +4,7 @@
 	Author: Dmytro Lobov
 	Author URI: https://profiles.wordpress.org/lobov
 	Description: Convenient, clean and simple to use WordPress theme MyStem will help attract and retain more visitors to your site. It is great for creating blogs, websites, portfolios, news and information portals, magazine publications, etc. The responsive multifunctional theme is optimized for SEO with great attention to detail. It supports widgets with a variety of sidebar options and 3 footers. It allows you to add the audio and video content, display individual images and whole galleries, navigational menus, recent posts, RSS feeds and more through the widgets. You can easily customize the flexible menu, logo and resource icon, edit the color scheme of the site, the content display options on the main page, add your own CSS code. The theme is fully adaptable, it provides convenient viewing on various devices. Features: GDPR (Privacy Policy link in footer); Supports multilanguage; Live Customizer; Responsive layout; Customizing the color scheme; 2 customizable menus; Mobile device menus; Three additional widgets (Categories, Recent Posts, Resent Comments); Category templates. Good use with the plugin MyStem Extra. For demo, visit: https://mystemplus.com/demo/
-	Version:     1.2
+	Version:     1.2.1
 	License: GNU General Public License v2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	Text Domain: mystem
@@ -76,6 +76,9 @@ article,
 		Structure
 	--------------------------------------------------------------*/
 	.full {
+		width: 100%;
+	}
+	#full-width {
 		width: 100%;
 	}
 	.main {
@@ -1165,16 +1168,31 @@ article,
 		margin-top: 10px;
 		padding-left:15px;
 	}
-	.widget li {
+	.widget li{
 		list-style: none;
-		padding-bottom: 10px;
+		padding-bottom: 10px;		
 	}
-	.widget li:before, .footer-widget li:before{	
+	.widget li a{		
+		font-family: Quicksand,sans-serif;
+		font-weight: normal;
+	}
+	.widget_nav_menu li {
+		display: block;
+	}
+	
+	.widget_archive li:before,
+	.widget_categories li:before,
+	.widget_meta li:before,
+	.widget_pages li:before,
+	.widget_recent_comments li:before,
+	.widget_recent_entries li:before,
+	.widget_nav_menu li:before{	
 		font-family: "Font Awesome 5 Free";
 		content: "\f054";
 		margin-right: 8px;
-		font-weight: 900;
-	}
+		font-weight: 900;		
+	}	
+	
 	.widget li:last-child {
 		padding-bottom: 10px;
 		margin-bottom: 0;
@@ -1192,6 +1210,10 @@ article,
 	.widget_archive li:nth-child(even),
 	.widget_meta li:nth-child(even) {
 		margin-right: 0;
+	}
+	
+	.widget_nav_menu .sub-menu li:before {
+		position: relative;
 	}
 	
 	.tagcloud a{	
@@ -1258,8 +1280,7 @@ article,
 	.widget_mystem_recent_entries li:before {
 		content: none;
 	}
-	.widget_mystem_recent_entries .widget-img img {
-		border-radius: 5px;	
+	.widget_mystem_recent_entries .widget-img img {		
 		margin: 2px
 	}
 	.mystem-recent-post {
@@ -1314,6 +1335,18 @@ article,
 	.widget_mystem_widget_category .cat-child {
 		margin-left: 15px;
 	}
+	.widget_mystem_nav_menu_widget li {
+		display: block;
+	}
+	.widget_mystem_nav_menu_widget li a{
+		font-family: Quicksand,sans-serif;
+		font-size: 16px;
+		
+	}
+	.widget_mystem_nav_menu_widget li:before {
+		margin-right: 8px;
+	}
+	
 	
 	
 	/*--------------------------------------------------------------

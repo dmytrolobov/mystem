@@ -13,9 +13,9 @@
 		public function __construct() {
 			parent::__construct(
 			'mystem_widget_category',
-			__( 'MyStem Categories', 'mystem-taxonomy-temlates' ),
+			__( 'MyStem Categories', 'mystem' ),
 			array(
-			'description' =>__( 'Display the categories with icon', 'mystem-taxonomy-temlates' ),
+			'description' =>__( 'Display the categories with icon', 'mystem' ),
 			)
 			);
 		}
@@ -63,7 +63,7 @@
 				if ( !empty( $category->parent ) && empty( $hierarchy ) )
 				continue;
 				$counter = !empty( $counts ) ? ' <span>' . $category->count . '</span>' : '';
-				echo '<li' . $parent . '>' . $icon . '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'mystem-taxonomy-temlates' ), $category->name ) . '" ' . '>' . $category->name . '</a>' . $counter . '</li> ';
+				echo '<li' . $parent . '>' . $icon . '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'mystem' ), $category->name ) . '" ' . '>' . $category->name . '</a>' . $counter . '</li> ';
 			}
 			echo '</ul>';
 			echo $args['after_widget'];
@@ -73,7 +73,7 @@
 		public function form( $instance ) {
 			// Set up some default widget settings.
 			$defaults = array(
-			'title'        => __( 'Categories', 'mystem-taxonomy-temlates' ),
+			'title'        => __( 'Categories', 'mystem' ),
 			'counts'       => 'on',
 			'hierarchy'    => 'on',
 			'exclude'      => '',
@@ -84,34 +84,34 @@
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		<!-- Title -->
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'mystem-taxonomy-temlates' ) ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'mystem' ) ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<!-- Show post counts -->
 		<p>
 			<input <?php checked( $instance['counts'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'counts' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'counts' ) ); ?>" type="checkbox" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'counts' ) ); ?>"><?php esc_html_e( 'Show post counts', 'mystem-taxonomy-temlates' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'counts' ) ); ?>"><?php esc_html_e( 'Show post counts', 'mystem' ); ?></label>
 		</p>
 		<!-- Show hierarchy -->
 		<p>
 			<input <?php checked( $instance['hierarchy'], 'on' ); ?> id="<?php echo esc_attr( $this->get_field_id( 'hierarchy' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'hierarchy' ) ); ?>" type="checkbox" />
-			<label for="<?php echo esc_attr( $this->get_field_id( 'hierarchy' ) ); ?>"><?php esc_html_e( 'Show hierarchy', 'mystem-taxonomy-temlates' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'hierarchy' ) ); ?>"><?php esc_html_e( 'Show hierarchy', 'mystem' ); ?></label>
 		</p>
 		<!-- Exclude categories -->
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'exclude' ) ); ?>"><?php esc_html_e( 'Exclude categories:', 'mystem-taxonomy-temlates' ) ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'exclude' ) ); ?>"><?php esc_html_e( 'Exclude categories:', 'mystem' ) ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'exclude' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'exclude' ) ); ?>" type="text" value="<?php echo esc_attr($instance['exclude']); ?>" />
-			<em><?php esc_html_e( 'Enter categories IDs separated by the comma', 'mystem-taxonomy-temlates' ) ?></em>
+			<em><?php esc_html_e( 'Enter categories IDs separated by the comma', 'mystem' ) ?></em>
 		</p>
 		<!-- Include categories -->
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'include' ) ); ?>"><?php esc_html_e( 'Include categories:', 'mystem-taxonomy-temlates' ) ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'include' ) ); ?>"><?php esc_html_e( 'Include categories:', 'mystem' ) ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'include' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'include' ) ); ?>" type="text" value="<?php echo esc_attr($instance['include']); ?>" />
-			<em><?php esc_html_e( 'Enter categories IDs separated by the comma', 'mystem-taxonomy-temlates' ) ?></em>
+			<em><?php esc_html_e( 'Enter categories IDs separated by the comma', 'mystem' ) ?></em>
 		</p>
 		<!-- Categories orderby  -->
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>"><?php esc_html_e( 'Order by', 'mystem-taxonomy-temlates' ) ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>"><?php esc_html_e( 'Order by', 'mystem' ) ?></label>
 			<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>">
 				<option <?php selected( $instance['orderby'], 'ID' ); ?> value="ID">ID</option>
 				<option <?php selected( $instance['orderby'], 'name' ); ?> value="name">name</option>
@@ -122,7 +122,7 @@
 		
 		<!-- Categories order  -->
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Order', 'mystem-taxonomy-temlates' ) ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>"><?php esc_html_e( 'Order', 'mystem' ) ?></label>
 			<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'order' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'order' ) ); ?>">
 				<option <?php selected( $instance['order'], 'ASC' ); ?> value="ASC">ASC</option>
 				<option <?php selected( $instance['order'], 'DESC' ); ?> value="DESC">DESC</option>
@@ -131,7 +131,7 @@
 		
 		<!-- Categories taxonomy  -->
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_html_e( 'Taxonomy', 'mystem-taxonomy-temlates' ) ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_html_e( 'Taxonomy', 'mystem' ) ?></label>
 			<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'taxonomy' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>">
 				<?php 
 					$tax_args = array(

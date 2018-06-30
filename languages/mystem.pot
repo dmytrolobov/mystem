@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: MyStem\n"
-"POT-Creation-Date: 2018-05-29 11:31+0300\n"
-"PO-Revision-Date: 2018-05-29 11:30+0300\n"
+"POT-Creation-Date: 2018-06-30 12:42+0300\n"
+"PO-Revision-Date: 2018-06-30 12:41+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -155,43 +155,43 @@ msgstr ""
 msgid "About "
 msgstr ""
 
-#: functions.php:55
+#: functions.php:57
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:58
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:59
 msgid "Mobile Left Menu"
 msgstr ""
 
-#: functions.php:58
+#: functions.php:60
 msgid "Mobile Right Menu"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:75
 msgid "About MyStem"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:92
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:101
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:110
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:119
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:191 inc/customizer.php:290
+#: functions.php:177 inc/customizer.php:293
 msgid "Read More"
 msgstr ""
 
@@ -287,73 +287,73 @@ msgstr ""
 msgid "Hide private Policy Link?"
 msgstr ""
 
-#: inc/customizer.php:245 inc/customizer.php:254
+#: inc/customizer.php:247 inc/customizer.php:257
 msgid "fas fa-bars"
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:251
 msgid "Mobile Left Menu Icon"
 msgstr ""
 
-#: inc/customizer.php:258
+#: inc/customizer.php:261
 msgid "Mobile Right Menu Icon"
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:270
 msgid "Content Options"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:271
 msgid ""
 "Adjust the display of content on your website. All options have a default "
 "value that can be left as-is but you are free to customize."
 msgstr ""
 
-#: inc/customizer.php:278
+#: inc/customizer.php:281
 msgid "Post Feed Content"
 msgstr ""
 
-#: inc/customizer.php:295
+#: inc/customizer.php:298
 msgid "Excerpt & More Link Text"
 msgstr ""
 
-#: inc/customizer.php:306
+#: inc/customizer.php:309
 msgid "Show Featured Images in post listings?"
 msgstr ""
 
-#: inc/customizer.php:317
+#: inc/customizer.php:320
 msgid "Show Featured Images on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:331
 msgid "Show Meta on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:342
 msgid "Show Tags on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:353
 msgid "Show Related posts on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:362
+#: inc/customizer.php:365
 msgid "Number Of Related Posts:"
 msgstr ""
 
-#: inc/customizer.php:372
+#: inc/customizer.php:375
 msgid "Show Author block on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:386
 msgid "Show Navigation block on Single Posts?"
 msgstr ""
 
-#: inc/customizer.php:394
+#: inc/customizer.php:397
 msgid "Display Comments on Standard Pages?"
 msgstr ""
 
-#: inc/customizer.php:407
+#: inc/customizer.php:410
 msgid "Footer Credits & Copyright"
 msgstr ""
 
@@ -831,6 +831,131 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
+#: inc/widgets/category.php:16
+msgid "MyStem Categories"
+msgstr ""
+
+#: inc/widgets/category.php:18
+msgid "Display the categories with icon"
+msgstr ""
+
+#: inc/widgets/category.php:66
+#, php-format
+msgid "View all posts in %s"
+msgstr ""
+
+#: inc/widgets/category.php:76
+msgid "Categories"
+msgstr ""
+
+#: inc/widgets/category.php:87 inc/widgets/recent-comments.php:111
+#: inc/widgets/recent-posts.php:144
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/category.php:93
+msgid "Show post counts"
+msgstr ""
+
+#: inc/widgets/category.php:98
+msgid "Show hierarchy"
+msgstr ""
+
+#: inc/widgets/category.php:102
+msgid "Exclude categories:"
+msgstr ""
+
+#: inc/widgets/category.php:104 inc/widgets/category.php:110
+msgid "Enter categories IDs separated by the comma"
+msgstr ""
+
+#: inc/widgets/category.php:108
+msgid "Include categories:"
+msgstr ""
+
+#: inc/widgets/category.php:114
+msgid "Order by"
+msgstr ""
+
+#: inc/widgets/category.php:125
+msgid "Order"
+msgstr ""
+
+#: inc/widgets/category.php:134
+msgid "Taxonomy"
+msgstr ""
+
+#: inc/widgets/nav-menu.php:22
+msgid "MyStem Navigation Menu"
+msgstr ""
+
+#: inc/widgets/nav-menu.php:24
+msgid "Add a navigation menu (without dropdown) to sidebar"
+msgstr ""
+
+#: inc/widgets/nav-menu.php:42
+msgid "Navigation menu"
+msgstr ""
+
+#: inc/widgets/nav-menu.php:132
+msgid "Title"
+msgstr ""
+
+#: inc/widgets/nav-menu.php:136
+msgid "Select Menu"
+msgstr ""
+
+#: inc/widgets/nav-menu.php:138
+msgid "Select"
+msgstr ""
+
+#: inc/widgets/recent-comments.php:15
+msgid "Your site&#8217;s most recent comments."
+msgstr ""
+
+#: inc/widgets/recent-comments.php:18
+msgid "MyStem Recent Comments"
+msgstr ""
+
+#: inc/widgets/recent-comments.php:29
+msgid "Recent Comments"
+msgstr ""
+
+#. translators: comments widget: 1: comment author, 2: post link
+#: inc/widgets/recent-comments.php:70
+#, php-format
+msgctxt "mystem"
+msgid "<span class=\"recentcomments-content\">%1$s on <br/> %2$s</span>"
+msgstr ""
+
+#: inc/widgets/recent-comments.php:114
+msgid "Number of comments to show:"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:18
+msgid "Your site&#8217;s most recent Posts."
+msgstr ""
+
+#: inc/widgets/recent-posts.php:21
+msgid "MyStem Recent Posts"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:37
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:80
+msgid "(no title)"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:146
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:149
+msgid "Display post date?"
+msgstr ""
+
 #. translators: %s is search term
 #: search.php:21
 msgid "Search Results for: "
@@ -867,27 +992,22 @@ msgstr ""
 msgid "https://mystemplus.com/"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid ""
-"Convenient, clean and simple to use WordPress theme MyStem will help attract "
-"and retain more visitors to your site. It is great for creating blogs, "
-"websites, portfolios, news and information portals, magazine publications, "
-"etc. The responsive multifunctional theme is optimized for SEO with great "
-"attention to detail. It supports widgets with a variety of sidebar options "
-"and 3 footers. It allows you to add the audio and video content, display "
-"individual images and whole galleries, navigational menus, recent posts, RSS "
-"feeds and more through the widgets. You can easily customize the flexible "
-"menu, logo and resource icon, edit the color scheme of the site, the content "
-"display options on the main page, add your own CSS code. The theme is fully "
-"adaptable, it provides convenient viewing on various devices. Supports "
-"multilanguage. Support Privacy Policy link in footer. For demo, visit: "
-"https://mystemplus.com/mystem-demo/"
-msgstr ""
-
 #. Author of the plugin/theme
 msgid "Dmytro Lobov"
 msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://profiles.wordpress.org/lobov"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Page for Visual Composer"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width without Title"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width"
 msgstr ""

@@ -32,6 +32,13 @@ function mystem_tgmpa_register() {
 		),
 		
 		array(
+			'name'				=> 'Countdowns',
+			'slug'				=> 'mwp-countdown', 
+			'required'			=> false,
+			'force_activation'	=> false,
+		),
+		
+		array(
 			'name'				=> 'MyStem Extra',
 			'slug'				=> 'mystem-extra', 
 			'required'			=> true,

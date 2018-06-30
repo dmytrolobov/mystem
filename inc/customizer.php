@@ -605,7 +605,7 @@ function mystem_color_scheme_css() {
 			}
 		}
 
-		.header-menu .sub-menu, .navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .tagcloud a, footer .tag-list a, .paging-navigation, .related-posts, .page-numbers {
+		.header-menu .sub-menu, .navigation.post-navigation, .hentry, .page-header, .single-post-footer, #respond, .comments-list-area, .no-comments, .widget, .tagcloud a, footer .tag-list a, .paging-navigation, .related-posts, .page-numbers, .widget_mystem_recent_entries .widget-img img {
 			-webkit-border-radius: ' . esc_attr( $border ) . 'px;
 			border-radius: ' . esc_attr( $border ) . 'px;
 			
